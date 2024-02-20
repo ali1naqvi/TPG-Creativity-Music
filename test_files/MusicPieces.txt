@@ -1,0 +1,9 @@
+Chopin's Prelude Op.28 No.20 - easy                                         prelude20                   40 seconds -100 time steps
+Waltz in A minor, op. posth. B 150 - waltz 		     
+Chopin Nocturne Op. 15 No. 3 in G minor - difficult piece 
+
+bach ave maria (easy) 500 time steps
+
+
+
+what would happen if we train an agent on chopin nocturne and then give it the first 30 seconds of another chopin piece. would it capture the behavior of the artist

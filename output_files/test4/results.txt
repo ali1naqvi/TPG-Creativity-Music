@@ -1,0 +1,206 @@
+Test for bachs piece with one pitch. This is focused on the values themselves and not on the change.
+
+Trainer done: <tpg.trainer.Trainer object at 0x000001A2379B3FD0>
+Gen: 0, Best Score: -1250.5411434505754, Avg Score: -inf, Time: 0.012134378618664211
+Gen: 1, Best Score: -1208.98774189013, Avg Score: -inf, Time: 0.02195737838745117
+Gen: 2, Best Score: -1188.1790785018254, Avg Score: -inf, Time: 0.031793183154529996
+Gen: 3, Best Score: -1176.2516295436508, Avg Score: -inf, Time: 0.042185241116417777
+Gen: 4, Best Score: -406.30700073329336, Avg Score: -inf, Time: 0.05287495831648509
+Gen: 5, Best Score: -428.3305812303785, Avg Score: -inf, Time: 0.06373753415213691
+Gen: 6, Best Score: -374.69725694607666, Avg Score: -inf, Time: 0.07836697273784214
+Gen: 7, Best Score: -500.9663509935425, Avg Score: -inf, Time: 0.09256088382667965
+Gen: 8, Best Score: -351.95148193809587, Avg Score: -inf, Time: 0.10711552302042643
+Gen: 9, Best Score: -357.9610285496722, Avg Score: -inf, Time: 0.12247301373216841
+Gen: 10, Best Score: -236.93735490451468, Avg Score: -inf, Time: 0.13812208387586805
+Gen: 11, Best Score: -233.57272639253998, Avg Score: -inf, Time: 0.1530960096253289
+Gen: 12, Best Score: -233.57272639253998, Avg Score: -inf, Time: 0.16724187857574888
+Gen: 13, Best Score: -208.6049079389038, Avg Score: -inf, Time: 0.18314902312225767
+Gen: 14, Best Score: -208.6049079389038, Avg Score: -inf, Time: 0.19814700206120808
+Gen: 15, Best Score: -208.6049079389038, Avg Score: -inf, Time: 0.21521256029605865
+Gen: 16, Best Score: -208.6049079389038, Avg Score: -inf, Time: 0.231634178492758
+Gen: 17, Best Score: -208.6049079389038, Avg Score: -inf, Time: 0.2467089507314894
+Gen: 18, Best Score: -207.00010416193498, Avg Score: -inf, Time: 0.26005926231543225
+Gen: 19, Best Score: -205.2402794269291, Avg Score: -inf, Time: 0.27390241695774925
+Gen: 20, Best Score: -205.2402794269291, Avg Score: -inf, Time: 0.2865987347894245
+Gen: 21, Best Score: -205.2402794269291, Avg Score: -inf, Time: 0.3002380045917299
+Gen: 22, Best Score: -203.5923683866044, Avg Score: -inf, Time: 0.31382100959618886
+Gen: 23, Best Score: -203.6354756499603, Avg Score: -inf, Time: 0.32913776331477695
+Gen: 24, Best Score: -203.6354756499603, Avg Score: -inf, Time: 0.34592214081022477
+Gen: 25, Best Score: -203.5923683866044, Avg Score: -inf, Time: 0.36394081989924115
+Gen: 26, Best Score: -203.5923683866044, Avg Score: -inf, Time: 0.3813443858093686
+Gen: 27, Best Score: -203.5923683866044, Avg Score: -inf, Time: 0.3987721246480942
+Gen: 28, Best Score: -203.5923683866044, Avg Score: -inf, Time: 0.417117328842481
+Gen: 29, Best Score: -203.5923683866044, Avg Score: -inf, Time: 0.43622164487838744
+Gen: 30, Best Score: -201.51110650663537, Avg Score: -inf, Time: 0.4563942535718282
+Gen: 31, Best Score: -201.51110650663537, Avg Score: -inf, Time: 0.4774869672457377
+Gen: 32, Best Score: -201.51110650663537, Avg Score: -inf, Time: 0.4986121560467614
+Gen: 33, Best Score: -201.51110650663537, Avg Score: -inf, Time: 0.5210617634985182
+Gen: 34, Best Score: -201.51110650663537, Avg Score: -inf, Time: 0.5450563987096151
+Gen: 35, Best Score: -201.51110650663537, Avg Score: -inf, Time: 0.5721681167682012
+Gen: 36, Best Score: -201.51110650663537, Avg Score: -inf, Time: 0.5997762493954765
+Gen: 37, Best Score: -201.51110650663537, Avg Score: -inf, Time: 0.6261434147093031
+Gen: 38, Best Score: -195.231676953713, Avg Score: -inf, Time: 0.6541359261009428
+Gen: 39, Best Score: -195.231676953713, Avg Score: -inf, Time: 0.6801723347107569
+Gen: 40, Best Score: -195.231676953713, Avg Score: -inf, Time: 0.7074009668827057
+Gen: 41, Best Score: -195.231676953713, Avg Score: -inf, Time: 0.7350548898511463
+Gen: 42, Best Score: -195.231676953713, Avg Score: -inf, Time: 0.7637940876351462
+Gen: 43, Best Score: -195.231676953713, Avg Score: -inf, Time: 0.7924924915366702
+Gen: 44, Best Score: -195.231676953713, Avg Score: -inf, Time: 0.8230293464660644
+Gen: 45, Best Score: -195.231676953713, Avg Score: -inf, Time: 0.8527950555748409
+Gen: 46, Best Score: -164.40586145958486, Avg Score: -inf, Time: 0.8834048646688462
+Gen: 47, Best Score: -164.40586145958486, Avg Score: -inf, Time: 0.9140587855709924
+Gen: 48, Best Score: -164.40586145958486, Avg Score: -inf, Time: 0.9450688208474053
+Gen: 49, Best Score: -164.40586145958486, Avg Score: -inf, Time: 0.975898568895128
+Gen: 50, Best Score: -164.40586145958486, Avg Score: -inf, Time: 1.0074140445391337
+Gen: 51, Best Score: -164.40586145958486, Avg Score: -inf, Time: 1.0380648047394223
+Gen: 52, Best Score: -164.40586145958486, Avg Score: -inf, Time: 1.0712877076864242
+Gen: 53, Best Score: -164.40586145958486, Avg Score: -inf, Time: 1.1028211957878538
+Gen: 54, Best Score: -160.9999007896412, Avg Score: -inf, Time: 1.1342047361532848
+Gen: 55, Best Score: -160.9999007896412, Avg Score: -inf, Time: 1.1682518406046762
+Gen: 56, Best Score: -160.9999007896412, Avg Score: -inf, Time: 1.2012425849172803
+Gen: 57, Best Score: -158.12668566079725, Avg Score: -inf, Time: 1.2334788378742005
+Gen: 58, Best Score: -157.78056042762114, Avg Score: -inf, Time: 1.2673779667086071
+Gen: 59, Best Score: -157.78056042762114, Avg Score: -inf, Time: 1.3011134374803968
+Gen: 60, Best Score: -157.78056042762114, Avg Score: -inf, Time: 1.3330712574720383
+Gen: 61, Best Score: -153.2299217172088, Avg Score: -inf, Time: 1.360350040462282
+Gen: 62, Best Score: -142.62609431037242, Avg Score: -inf, Time: 1.3854521705706915
+Gen: 63, Best Score: -142.62609431037242, Avg Score: -inf, Time: 1.4106831979751586
+Gen: 64, Best Score: -146.0320549803161, Avg Score: -inf, Time: 1.436192022032208
+Gen: 65, Best Score: -142.62609431037242, Avg Score: -inf, Time: 1.4623576594723595
+Gen: 66, Best Score: -142.62609431037242, Avg Score: -inf, Time: 1.4892880701356463
+Gen: 67, Best Score: -139.75412356558076, Avg Score: -inf, Time: 1.5171769924958547
+Gen: 68, Best Score: -139.75412356558076, Avg Score: -inf, Time: 1.5461428053511515
+Gen: 69, Best Score: -139.32862578931744, Avg Score: -inf, Time: 1.5729174168904623
+Gen: 70, Best Score: -139.32862578931744, Avg Score: -inf, Time: 1.5993649004565345
+Gen: 71, Best Score: -139.32862578931744, Avg Score: -inf, Time: 1.62369985765881
+Gen: 72, Best Score: -139.32862578931744, Avg Score: -inf, Time: 1.6476604531208674
+Gen: 73, Best Score: -135.9156202592719, Avg Score: -inf, Time: 1.6721477717823452
+Gen: 74, Best Score: -135.9156202592719, Avg Score: -inf, Time: 1.6955860385629866
+Gen: 75, Best Score: -135.9156202592719, Avg Score: -inf, Time: 1.7196537741687563
+Gen: 76, Best Score: -135.9156202592719, Avg Score: -inf, Time: 1.7444421376784642
+Gen: 77, Best Score: -132.10879269781637, Avg Score: -inf, Time: 1.770044036242697
+Gen: 78, Best Score: -132.10879269781637, Avg Score: -inf, Time: 1.7962325457069608
+Gen: 79, Best Score: -132.10879269781637, Avg Score: -inf, Time: 1.8238694681723913
+Gen: 80, Best Score: -132.10879269781637, Avg Score: -inf, Time: 1.850883590247896
+Gen: 81, Best Score: -128.7028320278727, Avg Score: -inf, Time: 1.879016589191225
+Gen: 82, Best Score: -128.7028320278727, Avg Score: -inf, Time: 1.9081475004222659
+Gen: 83, Best Score: -128.7028320278727, Avg Score: -inf, Time: 1.94025948577457
+Gen: 84, Best Score: -128.7028320278727, Avg Score: -inf, Time: 1.971938118007448
+Gen: 85, Best Score: -128.7028320278727, Avg Score: -inf, Time: 2.002761559089025
+Gen: 86, Best Score: -128.7028320278727, Avg Score: -inf, Time: 2.033778733611107
+Gen: 87, Best Score: -125.24062248992041, Avg Score: -inf, Time: 2.064230890605185
+Gen: 88, Best Score: -125.24062248992041, Avg Score: -inf, Time: 2.093570694592264
+Gen: 89, Best Score: -124.00768200919167, Avg Score: -inf, Time: 2.1201205352279877
+Gen: 90, Best Score: -118.0327069342344, Avg Score: -inf, Time: 2.1466323069731392
+Gen: 91, Best Score: -121.4386676041781, Avg Score: -inf, Time: 2.1731374388933182
+Gen: 92, Best Score: -121.4386676041781, Avg Score: -inf, Time: 2.200759710735745
+Gen: 93, Best Score: -121.4386676041781, Avg Score: -inf, Time: 2.2284694712029562
+Gen: 94, Best Score: -118.0327069342344, Avg Score: -inf, Time: 2.256685970491833
+Gen: 95, Best Score: -115.54150032678851, Avg Score: -inf, Time: 2.2853690330849754
+Gen: 96, Best Score: -115.54150032678851, Avg Score: -inf, Time: 2.314768003953828
+Gen: 97, Best Score: -115.54150032678851, Avg Score: -inf, Time: 2.3446635555558735
+Gen: 98, Best Score: -115.54150032678851, Avg Score: -inf, Time: 2.372451950179206
+Gen: 99, Best Score: -115.54150032678851, Avg Score: -inf, Time: 2.3995658436748717
+Time Taken (Hours): 2.399629539847374
+Final Results:
+Min, Max, Avg
+(-inf, -1250.5411434505754, -inf)
+(-inf, -1208.98774189013, -inf)
+(-inf, -1188.1790785018254, -inf)
+(-inf, -1176.2516295436508, -inf)
+(-inf, -406.30700073329336, -inf)
+(-inf, -428.3305812303785, -inf)
+(-inf, -374.69725694607666, -inf)
+(-inf, -500.9663509935425, -inf)
+(-inf, -351.95148193809587, -inf)
+(-inf, -357.9610285496722, -inf)
+(-inf, -236.93735490451468, -inf)
+(-inf, -233.57272639253998, -inf)
+(-inf, -233.57272639253998, -inf)
+(-inf, -208.6049079389038, -inf)
+(-inf, -208.6049079389038, -inf)
+(-inf, -208.6049079389038, -inf)
+(-inf, -208.6049079389038, -inf)
+(-inf, -208.6049079389038, -inf)
+(-inf, -207.00010416193498, -inf)
+(-inf, -205.2402794269291, -inf)
+(-inf, -205.2402794269291, -inf)
+(-inf, -205.2402794269291, -inf)
+(-inf, -203.5923683866044, -inf)
+(-inf, -203.6354756499603, -inf)
+(-inf, -203.6354756499603, -inf)
+(-inf, -203.5923683866044, -inf)
+(-inf, -203.5923683866044, -inf)
+(-inf, -203.5923683866044, -inf)
+(-inf, -203.5923683866044, -inf)
+(-inf, -203.5923683866044, -inf)
+(-inf, -201.51110650663537, -inf)
+(-inf, -201.51110650663537, -inf)
+(-inf, -201.51110650663537, -inf)
+(-inf, -201.51110650663537, -inf)
+(-inf, -201.51110650663537, -inf)
+(-inf, -201.51110650663537, -inf)
+(-inf, -201.51110650663537, -inf)
+(-inf, -201.51110650663537, -inf)
+(-inf, -195.231676953713, -inf)
+(-inf, -195.231676953713, -inf)
+(-inf, -195.231676953713, -inf)
+(-inf, -195.231676953713, -inf)
+(-inf, -195.231676953713, -inf)
+(-inf, -195.231676953713, -inf)
+(-inf, -195.231676953713, -inf)
+(-inf, -195.231676953713, -inf)
+(-inf, -164.40586145958486, -inf)
+(-inf, -164.40586145958486, -inf)
+(-inf, -164.40586145958486, -inf)
+(-inf, -164.40586145958486, -inf)
+(-inf, -164.40586145958486, -inf)
+(-inf, -164.40586145958486, -inf)
+(-inf, -164.40586145958486, -inf)
+(-inf, -164.40586145958486, -inf)
+(-inf, -160.9999007896412, -inf)
+(-inf, -160.9999007896412, -inf)
+(-inf, -160.9999007896412, -inf)
+(-inf, -158.12668566079725, -inf)
+(-inf, -157.78056042762114, -inf)
+(-inf, -157.78056042762114, -inf)
+(-inf, -157.78056042762114, -inf)
+(-inf, -153.2299217172088, -inf)
+(-inf, -142.62609431037242, -inf)
+(-inf, -142.62609431037242, -inf)
+(-inf, -146.0320549803161, -inf)
+(-inf, -142.62609431037242, -inf)
+(-inf, -142.62609431037242, -inf)
+(-inf, -139.75412356558076, -inf)
+(-inf, -139.75412356558076, -inf)
+(-inf, -139.32862578931744, -inf)
+(-inf, -139.32862578931744, -inf)
+(-inf, -139.32862578931744, -inf)
+(-inf, -139.32862578931744, -inf)
+(-inf, -135.9156202592719, -inf)
+(-inf, -135.9156202592719, -inf)
+(-inf, -135.9156202592719, -inf)
+(-inf, -135.9156202592719, -inf)
+(-inf, -132.10879269781637, -inf)
+(-inf, -132.10879269781637, -inf)
+(-inf, -132.10879269781637, -inf)
+(-inf, -132.10879269781637, -inf)
+(-inf, -128.7028320278727, -inf)
+(-inf, -128.7028320278727, -inf)
+(-inf, -128.7028320278727, -inf)
+(-inf, -128.7028320278727, -inf)
+(-inf, -128.7028320278727, -inf)
+(-inf, -128.7028320278727, -inf)
+(-inf, -125.24062248992041, -inf)
+(-inf, -125.24062248992041, -inf)
+(-inf, -124.00768200919167, -inf)
+(-inf, -118.0327069342344, -inf)
+(-inf, -121.4386676041781, -inf)
+(-inf, -121.4386676041781, -inf)
+(-inf, -121.4386676041781, -inf)
+(-inf, -118.0327069342344, -inf)
+(-inf, -115.54150032678851, -inf)
+(-inf, -115.54150032678851, -inf)
+(-inf, -115.54150032678851, -inf)
+(-inf, -115.54150032678851, -inf)
+(-inf, -115.54150032678851, -inf)

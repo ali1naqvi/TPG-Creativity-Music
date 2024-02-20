@@ -1,0 +1,14 @@
+This version has the untouched pytpg to test what would happen with two continuous states 
+I have also added recursion to occur for 50 percent of the training data
+and finally, operators have been reduced to default rather than using full (cos, log, etc)
+
+Using the first order difference: 
+    pros: easier for it to recognize patterns. 
+    cons:
+
+
+DID NOT include priming for best agent
+
+THOUGHTS: Instead of accumulating error with recursion and also using direct which might cause issues with actually
+guessing. We can use recursion for each episode instead. Give it the initial state of that episode to start off and
+then go off of that.
