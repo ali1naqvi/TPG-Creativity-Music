@@ -7,10 +7,12 @@ import time
 import ast, pickle
 import zlib
 from pathlib import Path
+from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInstructionStats, pathDepths
+
 
 #values that can be modified for testing 
 MAX_STEPS_G = 500 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 1000
+GENERATIONS = 2000
 EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 1 #
@@ -69,9 +71,9 @@ class TimeSeriesEnvironment:
             modified_pitch_array = action_type[1][2:] #+ self.last_state[2]
             
         else: 
-            modified_offset = action_type[1][0] - self.last_state[0]
-            modified_duration = action_type[1][1] - self.last_state[1]
-            modified_pitch_array = action_type[1][2:] - self.last_state[2]
+            modified_offset = action_type[1][0] + self.last_state[0]
+            modified_duration = action_type[1][1] + self.last_state[1]
+            modified_pitch_array = action_type[1][2:] + self.last_state[2]
         #clipping the values now: 
         modified_offset = max(modified_offset, self.last_state[0])
         modified_duration = max(modified_duration, 0)  # Second clipping if it's larger than previous offset value
@@ -104,9 +106,9 @@ class TimeSeriesEnvironment:
             modified_duration = action_type[1][1] #+ self.last_state[1]
             modified_pitch_array = action_type[1][2:] #+ self.last_state[2]
         else: 
-            modified_offset = action_type[1][0] - self.last_state[0]
-            modified_duration = action_type[1][1] - self.last_state[1]
-            modified_pitch_array = action_type[1][2:] - self.last_state[2]
+            modified_offset = action_type[1][0] + self.last_state[0]
+            modified_duration = action_type[1][1] + self.last_state[1]
+            modified_pitch_array = action_type[1][2:] + self.last_state[2]
         
         #clipping the values now:
         modified_offset = max(modified_offset, self.last_state[0])
@@ -177,6 +179,15 @@ def RunBestAgent(args):
     env = TimeSeriesEnvironment(current_step_g=MAX_STEPS_G-1)
 
     simulation_results = []
+    
+    print("Priming")
+    for x in range(MAX_STEPS_G):
+        row = data1.iloc[x]
+        state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
+        action_value = (agent.act(np.hstack((state[:2],state[2]))))[1]
+        print(action_value)
+
+
     for x in range(EXTRA_TIME_STEPS-1): 
 
         action_value = (agent.act(np.hstack((env.last_state[:2],env.last_state[2]))))
@@ -237,7 +248,9 @@ if __name__ == '__main__':
             pool.map(runAgent, [(agent, scoreList) for agent in agents])
             
             teams = trainer.applyScores(scoreList)  
-            champ = trainer.getAgents()[0].team
+            
+            champ = trainer.getEliteAgent()
+            champ.saveToFile("./output_files/best_agent")
 
             trainer.evolve()
             
@@ -251,17 +264,17 @@ if __name__ == '__main__':
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
-            champ = trainer.getAgents()[0] 
-            champ.saveToFile("./output_files/best_agent")
         
         file.write(f'Time Taken (Hours): {(time.time() - tStart)/3600}\n')
         file.write('Final Results:\nMin, Max, Avg\n')
         for score in allScores:
             file.write(f"{score}\n")
         
-        champ = pickle.load(open("./output_files/best_agent", 'rb'))
+        #champ = pickle.load(open("./output_files/best_agent", 'rb'))
+        champ = trainer.getEliteAgent()
         champ.configFunctionsSelf()
 
         # Assuming RunBestAgent is a function you have defined earlier
         #empty array is: scorelist
+        
         RunBestAgent((champ, []))
