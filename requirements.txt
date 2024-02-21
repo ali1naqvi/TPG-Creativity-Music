@@ -14,4 +14,3 @@ setuptools==58.1.0
 #tensorflow==2.9.1
 unittest_xml_reporting==3.2.0
 multiprocess==0.70.15
--e ./PyTPG
