@@ -10,4 +10,4 @@ seed=$1
 
 module load python/3.10
 
-python /models/generator_TPG.PY -s $seed  --num_proc 64
+python models/generator_TPG.PY -s $seed  --num_proc 64
