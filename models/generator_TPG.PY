@@ -15,7 +15,7 @@ MAX_STEPS_G = 500 #max values we want for training starts with 1 (so subtract on
 GENERATIONS = 2000
 EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
-DATA_DIVISION = 1 #
+DATA_DIVISION = 0.5
 
 data1 = pd.read_csv("./input.csv", header = 0)
 
@@ -47,7 +47,8 @@ class TimeSeriesEnvironment:
         
         self.current_step = episodenum * window_size 
 
-        self.max_generated_steps = self.current_step + window_size 
+        #0 to 20, subtract 1  
+        self.max_generated_steps = (self.current_step + window_size)
         self.last_state = self._get_state() 
 
         return self.last_state
@@ -137,20 +138,22 @@ def runAgent(args):
 
     env = TimeSeriesEnvironment()
     scoreTotal = 0
-    numEpisodes = int(MAX_STEPS_G / 25)#agent.get_window()
+    episode_length = 20 
+    numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 20 = 25
 
-    direct_steps = round(MAX_STEPS_G * DATA_DIVISION)
+    direct_steps = round(episode_length * DATA_DIVISION) # 20 * 0.5 = 10
     for ep in range(numEpisodes):
         #memory array is returned as this is the action state
-        action_state = env.reset(ep, 25) #resets at next 25 window (based on episode)
+        action_state = env.reset(ep, episode_length) #resets at next 25 window (based on episode)
         #predicted_state = action_state  #recursion will only occur for an episode with the correct one starting
         scoreEp = 0
         while True:
             #action state is current value, memory based on this will return from get_action_mem (includes it)
             action_state = np.hstack((action_state[:2],action_state[2]))
             
-             # change the action_state returning. Either use prediction (recursion) or direct approach 
-            if direct_steps > env.current_step:
+            # change the action_state returning. Either use prediction (recursion) or direct approach 
+            
+            if ((ep * episode_length) + direct_steps) > env.current_step:
                 action_value = (agent.act(action_state))
             else:
                 #after direct steps, it will take the predicted value produced then 
