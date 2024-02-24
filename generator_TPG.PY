@@ -12,12 +12,13 @@ from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInst
 
 #values that can be modified for testing 
 MAX_STEPS_G = 2500 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 1000
-EXTRA_TIME_STEPS  = 500 #number of wanted generated values 
+GENERATIONS = 1500
+EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
+EP_LENGTH = 20
 
-data1 = pd.read_csv("./input.csv", header = 0)
+data1 = pd.read_csv("input.csv", header = 0)
 
 MAX_PITCHES = data1['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece
 
@@ -138,10 +139,10 @@ def runAgent(args):
 
     env = TimeSeriesEnvironment()
     scoreTotal = 0
-    episode_length = 20 
+    episode_length = EP_LENGTH
     numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 20 = 25
 
-    direct_steps = round(episode_length * DATA_DIVISION) # 20 * 0.5 = 10
+    direct_steps = round(episode_length * DATA_DIVISION) # 20 * 0.5 = 10 OF AN EPISODE
     for ep in range(numEpisodes):
         #memory array is returned as this is the action state
         action_state = env.reset(ep, episode_length) #resets at next 25 window (based on episode)
@@ -214,8 +215,8 @@ def RunBestAgent(args):
 
 if __name__ == '__main__':
     tStart = time.time()
-    trainer_checkpoint_path = Path("./output_files/trainer_savepoint.pkl")
-    gen_checkpoint_path = Path("./output_files/gen_savepoint.txt")
+    trainer_checkpoint_path = Path("trainer_savepoint.pkl")
+    gen_checkpoint_path = Path("gen_savepoint.txt")
 
     if trainer_checkpoint_path.exists():
         trainer = pickle.load(open(trainer_checkpoint_path, 'rb'))
@@ -223,7 +224,7 @@ if __name__ == '__main__':
         print("LOADED TRAINER")
     else:
         #-159.676
-        trainer = Trainer(actions=[MAX_PITCHES+2, MAX_PITCHES+2], teamPopSize=500, pActAtom=1.0, memType="default", operationSet="def")
+        trainer = Trainer(actions=[MAX_PITCHES+2, MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="full")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
@@ -234,7 +235,7 @@ if __name__ == '__main__':
         gen_start = 0
 
     # Open a text file to write output
-    with open('./output_files/results.txt', 'a' if gen_start > 0 else 'w') as file:
+    with open('results.txt', 'a' if gen_start > 0 else 'w') as file:
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
@@ -253,7 +254,7 @@ if __name__ == '__main__':
             teams = trainer.applyScores(scoreList)  
             
             champ = trainer.getEliteAgent()
-            champ.saveToFile("./output_files/best_agent")
+            champ.saveToFile("best_agent")
 
             trainer.evolve()
             
@@ -262,8 +263,8 @@ if __name__ == '__main__':
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
             file.write(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}\n")
 
-            trainer.saveToFile("./output_files/trainer_savepoint.pkl")
-            with open("./output_files/gen_savepoint.txt", 'w') as gen_file:
+            trainer.saveToFile("trainer_savepoint.pkl")
+            with open("gen_savepoint.txt", 'w') as gen_file:
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
