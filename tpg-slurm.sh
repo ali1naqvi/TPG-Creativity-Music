@@ -2,8 +2,8 @@
 #SBATCH --account=def-skelly
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
-#SBATCH --mem=2G
-#SBATCH --time=0-48:00  # time (DD-HH:MM)
+#SBATCH --mem=10G
+#SBATCH --time=3-10:00  # time (DD-HH:MM)
 #SBATCH --error=error_file.txt
 
 seed=$1
