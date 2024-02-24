@@ -11,8 +11,8 @@ from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInst
 
 
 #values that can be modified for testing 
-MAX_STEPS_G = 500 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 2000
+MAX_STEPS_G = 100 #max values we want for training starts with 1 (so subtract one)
+GENERATIONS = 1000
 EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
