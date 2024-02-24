@@ -12,10 +12,11 @@ from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInst
 
 #values that can be modified for testing 
 MAX_STEPS_G = 100 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 100
+GENERATIONS = 1000
 EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
-DATA_DIVISION = 1.0
+DATA_DIVISION = 0.5
+EP_LENGTH = 10
 
 data1 = pd.read_csv("input.csv", header = 0)
 
@@ -138,7 +139,7 @@ def runAgent(args):
 
     env = TimeSeriesEnvironment()
     scoreTotal = 0
-    episode_length = 20 
+    episode_length = EP_LENGTH
     numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 20 = 25
 
     direct_steps = round(episode_length * DATA_DIVISION) # 20 * 0.5 = 10 OF AN EPISODE
