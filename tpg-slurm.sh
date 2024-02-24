@@ -1,6 +1,7 @@
 #!/bin/bash 
 #SBATCH --account=def-skelly
 #SBATCH --nodes=1
+#SBATCH --ntasks-per-node=64
 #SBATCH --mem=10G
 #SBATCH --time=3-10:00  # time (DD-HH:MM)
 #SBATCH --error=error_file.txt
