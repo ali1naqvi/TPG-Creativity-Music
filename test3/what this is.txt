@@ -1,0 +1,5 @@
+everything is the same
+
+20 episode length
+2 actions possible 
+1500 generations
