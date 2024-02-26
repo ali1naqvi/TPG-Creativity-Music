@@ -1,0 +1,1 @@
+In this test i had 2 options of the actions states which my test 2 will change. I also ran for 1500 generations

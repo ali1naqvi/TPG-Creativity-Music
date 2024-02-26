@@ -12,7 +12,7 @@ from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInst
 
 #values that can be modified for testing 
 MAX_STEPS_G = 500 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 1500
+GENERATIONS = 1499
 EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -188,17 +188,14 @@ def RunBestAgent(args):
     for x in range(MAX_STEPS_G):
         row = data1.iloc[x]
         state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
-        action_value = (agent.act(np.hstack((state[:2],state[2]))))[1]
-        print(action_value)
-
+        action_value = (agent.act(np.hstack((state[:2],state[2]))))
 
     for x in range(EXTRA_TIME_STEPS-1): 
-
+        print("LAST STATE: ", env.last_state)
         action_value = (agent.act(np.hstack((env.last_state[:2],env.last_state[2]))))
 
         action_state = env.step_simulation(action_value)
         print("action_state: ", action_state)
-        env.current_step +=1
 
         new_last_state = (action_state[0], action_state[1], np.array2string(np.array(action_state[2:]), separator=', '))
 
@@ -224,7 +221,7 @@ if __name__ == '__main__':
         print("LOADED TRAINER")
     else:
         #-159.676
-        trainer = Trainer(actions=[MAX_PITCHES+2, MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="full")
+        trainer = Trainer(actions=[MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
