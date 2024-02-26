@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /lustre07/scratch/alinaqvi/test3-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
   sum_squared_error += (a - p) ** 2
 /lustre07/scratch/alinaqvi/test3-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
@@ -243,4 +244,255 @@
 /lustre07/scratch/alinaqvi/test3-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
   sum_squared_error += (a - p) ** 2
 /lustre07/scratch/alinaqvi/test3-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+=======
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/test2-fantasie/generator_TPG.PY:32: RuntimeWarning: overflow encountered in scalar power
+>>>>>>> 5f7ddfe4bfebdbbc051e8031c179128174fb3d93
   sum_squared_error += (a - p) ** 2
