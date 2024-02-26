@@ -12,7 +12,7 @@ from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInst
 
 #values that can be modified for testing 
 MAX_STEPS_G = 2500 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 1500
+GENERATIONS = 1499
 EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -183,13 +183,6 @@ def RunBestAgent(args):
     env = TimeSeriesEnvironment(current_step_g=MAX_STEPS_G-1)
 
     simulation_results = []
-    
-    print("Priming")
-    for x in range(MAX_STEPS_G):
-        row = data1.iloc[x]
-        state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
-        action_value = (agent.act(np.hstack((state[:2],state[2]))))[1]
-        print(action_value)
 
 
     for x in range(EXTRA_TIME_STEPS-1): 
@@ -198,7 +191,6 @@ def RunBestAgent(args):
 
         action_state = env.step_simulation(action_value)
         print("action_state: ", action_state)
-        env.current_step +=1
 
         new_last_state = (action_state[0], action_state[1], np.array2string(np.array(action_state[2:]), separator=', '))
 
