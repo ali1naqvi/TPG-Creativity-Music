@@ -289,7 +289,7 @@ if __name__ == '__main__':
         print("LOADED TRAINER")
     else:
         #-159.676
-        trainer = Trainer(actions=[MAX_PITCHES+2, MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="full")
+        trainer = Trainer(actions=[MAX_PITCHES+2,MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
@@ -324,6 +324,7 @@ if __name__ == '__main__':
             trainer.evolve()
             
             if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
+                prevbestscore = float('-inf') #starting value of negative infinity
                 start_validation_time = time.time()
                 while True:
                     validationScores = man.list()
@@ -333,8 +334,7 @@ if __name__ == '__main__':
                     teams1 = trainer.applyScores(validationScores)
                       
                     # Update: Do not break the loop immediately
-                    
-                    if validationScores[0][1]['validation'] >= scoreList[0][1]['task']:
+                    if prevbestscore >= validationScores[0][1]['validation']:
                         validationChamp = trainer.getEliteAgent(task='validation')
                         finalTestScore = max(validationScores)
                         
@@ -347,6 +347,8 @@ if __name__ == '__main__':
                     if time.time() - start_validation_time > (3600*4):  # Check if 4 hour has passed
                         print("Time limit for finding a better validation champ exceeded.")
                         break  # Stop attempting to find a better agent if time limit is reached
+
+                    prevbestscore = [0][1]['validation']
                     trainer.evolve(tasks=['validation'])
                     
             scoreStats = trainer.fitnessStats
