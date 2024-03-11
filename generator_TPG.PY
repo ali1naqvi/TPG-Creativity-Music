@@ -11,12 +11,12 @@ from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInst
 
 
 #values that can be modified for testing 
-MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
+MAX_STEPS_G = 100 #max values we want for training starts with 1 (so subtract one)
 GENERATIONS = 1000
-EXTRA_TIME_STEPS  = 100 #number of wanted generated values 
-STARTING_STEP = 1 #starting step
+EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
+STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
-EP_LENGTH = 50
+EP_LENGTH = 20
 
 data1 = pd.read_csv("input.csv", header = 0)
 
@@ -325,8 +325,9 @@ if __name__ == '__main__':
             
             if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
                 prevbestscore = float('-inf') #starting value of negative infinity
+                looper = True
                 start_validation_time = time.time()
-                while True:
+                while looper == True:
                     validationScores = man.list()
                     agents = trainer.getAgents()
                     
@@ -342,13 +343,13 @@ if __name__ == '__main__':
                         validationChamp.saveToFile("validation_champion")
                         with open("final_validation_scores.txt", 'w') as f:
                             f.write(str(finalTestScore))
-                        break
+                        looper= False
                             
                     if time.time() - start_validation_time > (3600*4):  # Check if 4 hour has passed
                         print("Time limit for finding a better validation champ exceeded.")
-                        break  # Stop attempting to find a better agent if time limit is reached
+                        looper= False
 
-                    prevbestscore = [0][1]['validation']
+                    prevbestscore = validationScores[0][1]['validation']
                     trainer.evolve(tasks=['validation'])
                     
             scoreStats = trainer.fitnessStats

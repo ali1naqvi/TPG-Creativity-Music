@@ -2,7 +2,9 @@ import pretty_midi
 import pandas as pd 
 
 inputname = "input.csv"
-midi_file = "test_files/prelude20.mid"
+midi_file = "test_files/bach.mid"
+import matplotlib.pyplot as plt
+import numpy as np
 
 def get_rest_after_n_seconds(midi_file, seconds):
     # Load the MIDI file
@@ -57,10 +59,33 @@ def pad_pitches(pitch_list, max_length, pad_value=-1):
     return pitch_list + [pad_value] * (max_length - len(pitch_list))
 
 
-def data_extraction(midi_data):
-# Assume there is only one instrument and get all notes
-        # Assume there is only one instrument and get all notes
+def plot_pitches(input_csv):
+    df = pd.read_csv(input_csv)
 
+    df.replace(-1, np.nan, inplace=True)
+    # Create a new figure and axis for the plot
+    plt.figure(figsize=(12, 6))
+    ax = plt.gca()
+
+    # Extract the column names for pitch columns only
+    pitch_columns = [col for col in df.columns if col.startswith('pitch_')]
+
+    # Plot each pitch column
+    for col in pitch_columns:
+        df[col].plot(ax=ax, label=col)
+
+    # Set plot title and labels
+    plt.title('Pitches over Time')
+    plt.xlabel('Time (offset)')
+    plt.ylabel('Pitch')
+
+    # Display the legend
+    plt.legend()
+
+    # Show the plot
+    plt.show()
+
+def data_extraction(midi_data):
     df = pd.DataFrame()
     for i in range(0, len(midi_data.instruments)):
         all_notes = midi_data.instruments[i].notes
@@ -107,10 +132,24 @@ def data_extraction(midi_data):
     # Display the new DataFrame with combined pitches.
     df.to_csv(inputname, index=False)
 
+    # New section to separate pitches into their own columns
+    # We need to get the maximum number of pitches in any given offset
+    max_pitches = df['pitch'].apply(lambda x: len(x)).max()
+
+    # Create new columns for each pitch
+    for i in range(max_pitches):
+        df[f'pitch_{i+1}'] = df['pitch'].apply(lambda x: x[i] if i < len(x) else -1)
+    
+    # Drop the original 'pitch' column as we now have separate columns
+    df.drop('pitch', axis=1, inplace=True)
+    
+    # Save the DataFrame to CSV
+    df.to_csv(inputname, index=False)
+    
     print("CSV file saved.")
 
-
+# Call plot_pitches function after data_extraction
 if __name__ == '__main__':
-
-    midi_file = pretty_midi.PrettyMIDI(midi_file)
-    data_extraction(midi_file)
+    midi_data = pretty_midi.PrettyMIDI(midi_file)
+    data_extraction(midi_data)
+    plot_pitches(inputname)
