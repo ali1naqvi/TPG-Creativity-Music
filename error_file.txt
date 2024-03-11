@@ -1,0 +1,709 @@
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:75: RuntimeWarning: overflow encountered in scalar add
+  modified_offset = action_type[1][0] + self.last_state[0]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+/lustre07/scratch/alinaqvi/bach101/generator_TPG.PY:76: RuntimeWarning: overflow encountered in scalar add
+  modified_duration = action_type[1][1] + self.last_state[1]
+slurmstepd: error: *** JOB 26430049 ON nc20111 CANCELLED AT 2024-03-11T10:04:18 DUE TO TIME LIMIT ***

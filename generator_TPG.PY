@@ -305,7 +305,7 @@ if __name__ == '__main__':
         processes = mp.cpu_count()
 
         man = mp.Manager() 
-        pool = mp.Pool(processes=1)
+        pool = mp.Pool(processes=processes)
             
         allScores = []
 
