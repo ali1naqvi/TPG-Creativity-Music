@@ -11,17 +11,16 @@ from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInst
 
 
 #values that can be modified for testing 
-MAX_STEPS_G = 2500 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 1499
-EXTRA_TIME_STEPS  = 50 #number of wanted generated values 
+MAX_STEPS_G = 1000 #max values we want for training starts with 1 (so subtract one)
+GENERATIONS = 1000
+EXTRA_TIME_STEPS  = 150 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
-EP_LENGTH = 20
+EP_LENGTH = 50
 
 data1 = pd.read_csv("input.csv", header = 0)
 
 MAX_PITCHES = data1['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece
-
 
 def root_mean_squared_error(actual, predicted):
     if len(actual) != len(predicted):
@@ -31,7 +30,7 @@ def root_mean_squared_error(actual, predicted):
     for a, p in zip(actual, predicted):
         sum_squared_error += (a - p) ** 2
     rmse = (sum_squared_error / len(actual)) ** 0.5
-    return rmse
+    return rmse 
 
 #environment
 class TimeSeriesEnvironment:
@@ -49,7 +48,9 @@ class TimeSeriesEnvironment:
         self.current_step = episodenum * window_size 
 
         #0 to 20, subtract 1  
+        # stuff print("current step: ", self.current_step)
         self.max_generated_steps = (self.current_step + window_size)
+        # stuff print("max generated step: ", self.max_generated_steps)
         self.last_state = self._get_state() 
 
         return self.last_state
@@ -57,15 +58,13 @@ class TimeSeriesEnvironment:
 
 #get predicted step and compare with the actual value
     
-#first step: 0, last step:  19. len: 20
-    def step(self, action_type):
+#first step: 0, last step:  19. len: 20s
+    def step(self, action_type, forecasting=False):
 
         #reset values 
         done = False
         reward = 0
-
-        #get the state we are on
-        self.last_state = self._get_state()
+            
         #intuition is that if its the first atomic action, it will directly use the value, else (second atomic action), it will apply the change to the previous
         if action_type[0] == 0:
             modified_offset = action_type[1][0] #+ self.last_state[0]
@@ -97,11 +96,15 @@ class TimeSeriesEnvironment:
             #end of dataset
             done = True
 
+        if forecasting == True:
+            self.last_state = predicted_state
+        else:
+            self.last_state = self._get_state()
         self.current_step +=1
         return self.last_state, predicted_state, reward, done
 
     def step_simulation(self, action_type):
-        print(action_type)
+        # stuff print(action_type)
         
         if action_type[0] == 0:
             modified_offset = action_type[1][0] #+ self.last_state[0]
@@ -136,37 +139,47 @@ def runAgent(args):
 
     #funcion for handling parallelism
     agent.configFunctionsSelf()
-
     env = TimeSeriesEnvironment()
     scoreTotal = 0
     episode_length = EP_LENGTH
-    numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 20 = 25
+    numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 50 = 10
+    reward = 0
 
-    direct_steps = round(episode_length * DATA_DIVISION) # 20 * 0.5 = 10 OF AN EPISODE
+    priming_steps = round(episode_length * DATA_DIVISION) # 20 * 0.5 = 10 OF AN EPISODE
     for ep in range(numEpisodes):
+        isDone = False
         #memory array is returned as this is the action state
         action_state = env.reset(ep, episode_length) #resets at next 25 window (based on episode)
-        #predicted_state = action_state  #recursion will only occur for an episode with the correct one starting
+        
+        #starts on the second rather than the first so the first order difference be computed.
+        #env.current_step += 1
+        
+        predicted_state = action_state  #recursion will only occur for an episode with the correct one starting
         scoreEp = 0
         while True:
-            #action state is current value, memory based on this will return from get_action_mem (includes it)
-            action_state = np.hstack((action_state[:2],action_state[2]))
-            
             # change the action_state returning. Either use prediction (recursion) or direct approach 
-            
-            if ((ep * episode_length) + direct_steps) > env.current_step:
-                action_value = (agent.act(action_state))
+            #prime first half of the episode
+            # stuff  print("modifying: ", ((ep * episode_length) + priming_steps), "with episode: ", ep)
+            if ((ep * episode_length) + priming_steps) > env.current_step:
+                action_value = (agent.act(np.hstack((action_state[:2],action_state[2]))))
+                env.current_step += 1 #increase step in environment
+                action_state = env._get_state()
+                predicted_state = action_state #updating predicted
+            #second half of episode
             else:
+                #print("forecasting with step: ", env.current_step, "with state: ", predicted_state)
                 #after direct steps, it will take the predicted value produced then 
                 predicted_state = np.hstack((predicted_state[:2],predicted_state[2]))
                 action_value = (agent.act(predicted_state))
+                # stuff  print("step now: ", env.current_step, "with step: ", predicted_state)
+                action_state, predicted_state, reward, isDone = env.step(action_value, forecasting=True) #now fix step 
                 
             # Apply clipping to continuous actions : action_value 
             #action_state gives you the next step
-            action_state, predicted_state, reward, isDone = env.step(action_value)
             scoreEp += reward
             #env.set_action_mem(action_state) #add state to memory
             if isDone:
+                # stuff print("we finished")
                 break
         scoreTotal += scoreEp
 
@@ -176,6 +189,61 @@ def runAgent(args):
     scoreList.append((agent.team.id, agent.team.outcomes))
     return agent, scoreList
 
+def RunValidationAgents(args):
+    agent, validscoreList = args
+
+    #funcion for handling parallelism
+    agent.configFunctionsSelf()
+
+    env = TimeSeriesEnvironment()
+    scoreTotal = 0
+    episode_length = EP_LENGTH * 2 #100 
+    numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 100 = 5
+    reward = 0
+
+    priming_steps = round(episode_length * DATA_DIVISION) # 100 * 0.5 = 50 PRIMING
+    for ep in range(numEpisodes):
+        counter_direct = 0
+        #memory array is returned as this is the action state
+        action_state = env.reset(ep, episode_length) #resets at next 25 window (based on episode)
+        #predicted_state = action_state  #recursion will only occur for an episode with the correct one starting
+        scoreEp = 0
+        isDone = False
+        while True:
+            #action state is current value, memory based on this will return from get_action_mem (includes it)
+            # change the action_state returning. Either use prediction (recursion) or direct approach 
+            #prime first half of the episode
+            #intuition: multiplication of episode and length gives us the starting step + priming steps gives us where the forecasting should start
+            if ((ep * episode_length) + priming_steps) > env.current_step:
+                action_value = (agent.act(np.hstack((action_state[:2],action_state[2]))))
+                env.current_step +=1 #increase step in environment
+                action_state = env._get_state()
+            #second half of episode
+            else:
+                if counter_direct < (priming_steps / 2):
+                    action_value = (agent.act(np.hstack((action_state[:2],action_state[2]))))
+                    env.current_step +=1 #increase step in environment
+                    action_state = env._get_state()
+                    predicted_state = action_state
+                    counter_direct +=1
+                else:
+                    predicted_state = np.hstack((predicted_state[:2],predicted_state[2]))
+                    action_value = (agent.act(predicted_state))
+                    action_state, predicted_state, reward, isDone = env.step(action_value, forecasting=True) #now fix step 
+                
+            # Apply clipping to continuous actions : action_value 
+            #action_state gives you the next step
+            scoreEp += reward
+            #env.set_action_mem(action_state) #add state to memory
+            if isDone:
+                break
+        scoreTotal += scoreEp
+
+    scoreTotal /= numEpisodes
+    agent.reward(scoreTotal, task='validation')
+
+    validscoreList.append((agent.team.id, agent.team.outcomes))
+    return agent, validscoreList
 
 def RunBestAgent(args):
     agent, scoreList = args
@@ -184,13 +252,18 @@ def RunBestAgent(args):
 
     simulation_results = []
 
+    # stuff print("Priming")
+    for x in range(MAX_STEPS_G):
+        row = data1.iloc[x]
+        state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
+        action_value = (agent.act(np.hstack((state[:2],state[2]))))
 
     for x in range(EXTRA_TIME_STEPS-1): 
 
         action_value = (agent.act(np.hstack((env.last_state[:2],env.last_state[2]))))
 
         action_state = env.step_simulation(action_value)
-        print("action_state: ", action_state)
+        # stuff print("action_state: ", action_state)
 
         new_last_state = (action_state[0], action_state[1], np.array2string(np.array(action_state[2:]), separator=', '))
 
@@ -216,7 +289,7 @@ if __name__ == '__main__':
         print("LOADED TRAINER")
     else:
         #-159.676
-        trainer = Trainer(actions=[MAX_PITCHES+2, MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="full")
+        trainer = Trainer(actions=[MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
@@ -231,7 +304,7 @@ if __name__ == '__main__':
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
-        man = mp.Manager()
+        man = mp.Manager() 
         pool = mp.Pool(processes=processes)
             
         allScores = []
@@ -250,6 +323,35 @@ if __name__ == '__main__':
 
             trainer.evolve()
             
+            if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
+                prevbestscore = float('-inf') #starting value of negative infinity
+                looper = True
+                start_validation_time = time.time()
+                while looper == True:
+                    validationScores = man.list()
+                    agents = trainer.getAgents()
+                    
+                    pool.map(RunValidationAgents, [(agent, validationScores) for agent in agents])
+                    teams1 = trainer.applyScores(validationScores)
+                      
+                    # Update: Do not break the loop immediately
+                    if prevbestscore >= validationScores[0][1]['validation']:
+                        validationChamp = trainer.getEliteAgent(task='validation')
+                        finalTestScore = max(validationScores)
+                        
+                        print(f"Validation champ met/exceeded the best test score with {finalTestScore} on test data.")
+                        validationChamp.saveToFile("validation_champion")
+                        with open("final_validation_scores.txt", 'w') as f:
+                            f.write(str(finalTestScore))
+                        looper= False
+                            
+                    if time.time() - start_validation_time > (3600*4):  # Check if 4 hour has passed
+                        print("Time limit for finding a better validation champ exceeded.")
+                        looper= False
+
+                    prevbestscore = validationScores[0][1]['validation']
+                    trainer.evolve(tasks=['validation'])
+                    
             scoreStats = trainer.fitnessStats
             allScores.append((scoreStats['min'], scoreStats['max'], scoreStats['average']))
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
@@ -267,7 +369,7 @@ if __name__ == '__main__':
             file.write(f"{score}\n")
         
         #champ = pickle.load(open("./output_files/best_agent", 'rb'))
-        champ = trainer.getEliteAgent()
+        champ = trainer.getEliteAgent(task='validation')
         champ.configFunctionsSelf()
 
         # Assuming RunBestAgent is a function you have defined earlier

@@ -1,0 +1,2 @@
+Changes made: 36 computational clock hours
+one action state and default set of operations are used 
