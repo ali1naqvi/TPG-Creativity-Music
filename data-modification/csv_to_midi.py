@@ -41,4 +41,4 @@ if __name__ == '__main__':
     note_data = df_notes.to_dict('records')
 
     # Now you can pass this list to the function
-    create_midi_from_csv(note_data, 'output_files/output_predictions.mid')
+    create_midi_from_csv(note_data, 'output_predictions.mid')
