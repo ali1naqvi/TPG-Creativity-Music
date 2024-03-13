@@ -1,5 +1,5 @@
 import pygame
-midi_filename = 'output_files/output_predictions.mid'
+midi_filename = 'output_predictions.mid'
 
 def pygame_in():
     pygame.mixer.init()
