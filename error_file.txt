@@ -1,0 +1,273 @@
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_2.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_3.PY:31: RuntimeWarning: overflow encountered in scalar power
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_2.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_2.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_1.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_2.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_2.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+/lustre07/scratch/alinaqvi/bach_final/generator_TPG_2.PY:31: RuntimeWarning: overflow encountered in scalar add
+  sum_squared_error += (a - p) ** 2
+slurmstepd: error: *** JOB 26672822 ON nc20654 CANCELLED AT 2024-03-14T20:48:11 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 26672827 ON nc20150 CANCELLED AT 2024-03-14T20:52:20 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 26672828 ON nc20529 CANCELLED AT 2024-03-14T20:55:21 DUE TO TIME LIMIT ***
