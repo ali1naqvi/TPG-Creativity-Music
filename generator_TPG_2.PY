@@ -12,7 +12,7 @@ from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInst
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 2000
+GENERATIONS = 1999
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -253,7 +253,7 @@ def RunBestAgent(args):
     simulation_results = []
 
     # stuff print("Priming")
-    for x in range(MAX_STEPS_G):
+    for x in range(MAX_STEPS_G-1):
         row = data1.iloc[x]
         state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
         action_value = (agent.act(np.hstack((state[:2],state[2]))))
@@ -369,9 +369,17 @@ if __name__ == '__main__':
             file.write(f"{score}\n")
         
         #champ = pickle.load(open("./output_files/best_agent", 'rb'))
+        champ = trainer.getEliteAgent(task='task')
+        print(champ.team)
+        print(champ.team.fitness)
+        print(champ.team.learners)
+        print(champ.team.outcomes)
         champ = trainer.getEliteAgent(task='validation')
-        champ.configFunctionsSelf()
-
+        print(champ.team)
+        print(champ.team.fitness)
+        print(champ.team.learners)
+        print(champ.team.outcomes)
+        print("---------------")
         # Assuming RunBestAgent is a function you have defined earlier
         #empty array is: scorelist
         

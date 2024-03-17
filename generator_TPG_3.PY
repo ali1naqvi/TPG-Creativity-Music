@@ -70,7 +70,6 @@ class TimeSeriesEnvironment:
             modified_offset = action_type[1][0] #+ self.last_state[0]
             modified_duration = action_type[1][1] #+ self.last_state[1]
             modified_pitch_array = action_type[1][2:] #+ self.last_state[2]
-            
         else: 
             modified_offset = action_type[1][0] + self.last_state[0]
             modified_duration = action_type[1][1] + self.last_state[1]
@@ -85,8 +84,10 @@ class TimeSeriesEnvironment:
         predicted_state = (modified_offset, modified_duration, modified_pitch_array)
         
         #check if we reached the end, calculate the reward 
-                #0 - 19           #20 
+                #0 - 20           #20
+         
         #get the next value to reward based on the predicted value
+        #DOUBLE CHECK IF IT SHOULD BE EQUAL
         if self.current_step+1 < self.max_generated_steps:
             actual_row = data1.iloc[self.current_step+1]
             self.real_state = (actual_row['offset'], actual_row['duration_ppq'], np.array(ast.literal_eval(actual_row['pitch'])))
@@ -184,7 +185,7 @@ def runAgent(args):
         scoreTotal += scoreEp
 
     scoreTotal /= numEpisodes
-    agent.reward(scoreTotal)
+    agent.reward(scoreTotal, task='main')
 
     scoreList.append((agent.team.id, agent.team.outcomes))
     return agent, scoreList
@@ -253,13 +254,16 @@ def RunBestAgent(args):
     simulation_results = []
 
     # stuff print("Priming")
-    for x in range(MAX_STEPS_G):
+    visited = []
+    for x in range(MAX_STEPS_G-1):
         row = data1.iloc[x]
         state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
         action_value = (agent.act(np.hstack((state[:2],state[2]))))
+        print("state: ", state)
+        print("action_value: ", action_value)
 
     for x in range(EXTRA_TIME_STEPS-1): 
-
+        print(env.last_state)
         action_value = (agent.act(np.hstack((env.last_state[:2],env.last_state[2]))))
 
         action_state = env.step_simulation(action_value)
@@ -273,22 +277,21 @@ def RunBestAgent(args):
     new_data = pd.DataFrame(simulation_results, columns=['offset', 'duration_ppq', 'pitch'])
     new_data['pitch'] = new_data['pitch'].apply(str)    
     updated_data = pd.concat([data1[:MAX_STEPS_G], new_data], ignore_index=True)
-    updated_data.to_csv('Simulation_13.csv', index=False)
+    updated_data.to_csv('Simulation_14.csv', index=False)
     
     new_data = pd.DataFrame(simulation_results, columns=['offset', 'duration_ppq', 'pitch'])
     new_data['pitch'] = new_data['pitch'].apply(str)
 
 if __name__ == '__main__':
     tStart = time.time()
-    trainer_checkpoint_path = Path("trainer_savepoint_13.pkl")
-    gen_checkpoint_path = Path("gen_savepoint_13.txt")
+    trainer_checkpoint_path = Path("trainer_savepoint_14.pkl")
+    gen_checkpoint_path = Path("gen_savepoint_14.txt")
 
     if trainer_checkpoint_path.exists():
         trainer = pickle.load(open(trainer_checkpoint_path, 'rb'))
         trainer.configFunctions()
         print("LOADED TRAINER")
     else:
-        #-159.676
         trainer = Trainer(actions=[MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="def")
         gen_start = 0
     
@@ -300,7 +303,7 @@ if __name__ == '__main__':
         gen_start = 0
 
     # Open a text file to write output
-    with open('results_13.txt', 'a' if gen_start > 0 else 'w') as file:
+    with open('results_14.txt', 'a' if gen_start > 0 else 'w') as file:
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
@@ -318,47 +321,60 @@ if __name__ == '__main__':
             
             teams = trainer.applyScores(scoreList)  
             
-            champ = trainer.getEliteAgent()
-            champ.saveToFile("best_agent_13")
+            champ = trainer.getEliteAgent(task='main')
+            champ.saveToFile("best_agent_14")
 
-            trainer.evolve()
+            trainer.evolve(tasks=['main'])
             
+            validation_champion_path = Path("validation_champion_14")
             if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
                 prevbestscore = float('-inf') #starting value of negative infinity
                 looper = True
                 start_validation_time = time.time()
-                while looper == True:
+                print("values")
+                while looper:
                     validationScores = man.list()
                     agents = trainer.getAgents()
                     
                     pool.map(RunValidationAgents, [(agent, validationScores) for agent in agents])
                     teams1 = trainer.applyScores(validationScores)
-                      
-                    # Update: Do not break the loop immediately
-                    if prevbestscore >= validationScores[0][1]['validation']:
-                        validationChamp = trainer.getEliteAgent(task='validation')
-                        finalTestScore = max(validationScores)
+                    
+                    #the current best of this evolution
+                    current_best_validation = trainer.getEliteAgent(task='validation')
+                    print(current_best_validation.team.outcomes['validation'])
+                    #save and retrieve best validation agent (since the best of gen != best)
+                    if current_best_validation.team.outcomes['validation'] >= prevbestscore:
+                        prevbestscore = current_best_validation.team.outcomes['validation']
                         
-                        print(f"Validation champ met/exceeded the best test score with {finalTestScore} on test data.")
-                        validationChamp.saveToFile("validation_champion_13")
-                        with open("final_validation_scores_13.txt", 'w') as f:
-                            f.write(str(finalTestScore))
+                        validationChamp = current_best_validation
+                        validationChamp.saveToFile("validation_champion_14")
+                    else: 
+                        #error check just in case file does not exist 
+                        if validation_champion_path.exists():
+                            validationChamp = pickle.load(open(validation_champion_path, 'rb'))
+                            validationChamp.configFunctionsSelf()
+                        else: 
+                            validationChamp = trainer.getEliteAgent(task='validation')
+                        print("validationchampion: ", validationChamp.team.outcomes)
+                        print(f"Validation champ with the best test score with {validationChamp.team.outcomes['validation']} on test data.")
+                        with open("final_validation_scores_14.txt", 'w') as f:
+                            f.write(str(validationChamp.team.outcomes['validation']))
                         looper= False
                             
                     if time.time() - start_validation_time > (3600*4):  # Check if 4 hour has passed
                         print("Time limit for finding a better validation champ exceeded.")
                         looper= False
 
-                    prevbestscore = validationScores[0][1]['validation']
-                    trainer.evolve(tasks=['validation'])
+                    if looper:
+                        trainer.evolve(tasks=['validation'])
                     
             scoreStats = trainer.fitnessStats
             allScores.append((scoreStats['min'], scoreStats['max'], scoreStats['average']))
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
             file.write(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}\n")
 
-            trainer.saveToFile("trainer_savepoint_13.pkl")
-            with open("gen_savepoint_13.txt", 'w') as gen_file:
+            trainer.saveToFile("trainer_savepoint_14.pkl")
+            with open("gen_savepoint_14.txt", 'w') as gen_file:
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
@@ -367,10 +383,15 @@ if __name__ == '__main__':
         file.write('Final Results:\nMin, Max, Avg\n')
         for score in allScores:
             file.write(f"{score}\n")
-        
-        #champ = pickle.load(open("./output_files/best_agent", 'rb'))
-        champ = trainer.getEliteAgent(task='validation')
+
+        champ = pickle.load(open("validation_champion_14", 'rb'))
         champ.configFunctionsSelf()
+        print(champ.team)
+        print(champ.team.fitness)
+        print(champ.team.learners)
+        print(champ.team.outcomes)
+        print("---------------")
+        #champ.configFunctions()
 
         # Assuming RunBestAgent is a function you have defined earlier
         #empty array is: scorelist
