@@ -7,6 +7,7 @@ def min_max_scale(series, feature_range=(0, 1)):
     return series_scaled
 
 def invert_min_max_scale(scaled_val, original_min, original_max, feature_range=(0, 1)):
+    print(scaled_val)
     scale = feature_range[1] - feature_range[0]
     return ((scaled_val - feature_range[0]) * (original_max - original_min) / scale) + original_min
 

@@ -12,14 +12,15 @@ import utils
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 2000
+GENERATIONS = 12
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
 EP_LENGTH = 100
 
 original_data = pd.read_csv("input.csv", header = 0)
-changed_data = pd.read_csv("input.csv", header = 0)
+original_data['pitch'] = original_data['pitch'].apply(ast.literal_eval) #convert all strings to list
+changed_data = original_data
 
 MAX_PITCHES =  1  #changed_data['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece, will be one
 starting_offset = changed_data['offset'][0] #the starting offset (for reversing)
@@ -38,7 +39,7 @@ max_pitch = 127
 #scaled
 changed_data['offset'] = utils.min_max_scale(changed_data['offset'])
 changed_data['duration_ppq'] = utils.min_max_scale(changed_data['duration_ppq'])
-changed_data['pitch'] = changed_data['pitch'].apply(ast.literal_eval).apply(lambda pitches: [(p - min_pitch) / (max_pitch - min_pitch) for p in pitches]) #since pitches are in a list
+changed_data['pitch'] = changed_data['pitch'].apply(lambda pitches: [(p - min_pitch) / (max_pitch - min_pitch) for p in pitches]) #since pitches are in a list
 
 #add columns to new data
 new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])    
@@ -280,33 +281,29 @@ def RunBestAgent(args):
         row = changed_data.iloc[x]
         state = (row['offset'], row['duration_ppq'], np.array(row['pitch']))
         action_value = (agent.act(np.hstack((state[:2],state[2]))))
-        print("state: ", state)
-        print("action_value: ", action_value)
 
+    print("Priming complete")
     for x in range(EXTRA_TIME_STEPS-1): 
-        print(env.last_state)
         action_value = (agent.act(np.hstack((env.last_state[:2],env.last_state[2]))))
 
         action_state = env.step_simulation(action_value)
-        #REVERSE FOR STORAGE
-        reverse_action_state = action_state[0] + env.last_state[0]
-        new_last_state = (reverse_action_state, action_state[1], action_state[2])
-
+        new_last_state = (action_state[0], action_state[1], action_state[2])
         simulation_results.append(new_last_state)
         env.last_state = action_state
-
+    print("Simulation complete..")
     simulated_data = pd.DataFrame(simulation_results, columns=['offset', 'duration_ppq', 'pitch'])
 
     #invert the scale for offset
+    simulated_data = pd.concat([original_data[:MAX_STEPS_G], simulated_data], ignore_index=True)
+    
     simulated_data['offset'] = simulated_data['offset'].apply(lambda x: utils.invert_min_max_scale(x, prescaled_offset_min, prescaled_offset_max))
     original_offsets = np.cumsum(np.insert(simulated_data['offset'].values, 0, starting_offset))[1:]
     simulated_data['offset'] = original_offsets
 
     #invert duration and pitches
     simulated_data['duration_ppq'] = simulated_data['duration_ppq'].apply(lambda x: utils.invert_min_max_scale(x, prescaled_duration_min, prescaled_duration_max))
+        
     simulated_data['pitch'] = simulated_data['pitch'].apply(lambda pitches: [int(round(utils.invert_min_max_scale(p, min_pitch, max_pitch, feature_range=(0, 1)))) for p in pitches])
-
-    simulated_data = pd.concat([original_data[:MAX_STEPS_G], simulated_data], ignore_index=True)
     simulated_data.to_csv('Simulation_14.csv', index=False)
 
 if __name__ == '__main__':
