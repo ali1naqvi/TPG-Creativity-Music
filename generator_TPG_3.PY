@@ -8,7 +8,7 @@ import ast, pickle
 import zlib
 from pathlib import Path
 from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInstructionStats, pathDepths
-
+import utils
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
@@ -18,9 +18,30 @@ STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
 EP_LENGTH = 100
 
-data1 = pd.read_csv("input.csv", header = 0)
+original_data = pd.read_csv("input.csv", header = 0)
+changed_data = pd.read_csv("input.csv", header = 0)
 
-MAX_PITCHES = data1['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece
+MAX_PITCHES =  1  #changed_data['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece, will be one
+starting_offset = changed_data['offset'][0] #the starting offset (for reversing)
+
+#change offset to first order difference (FOD)
+changed_data['offset'] = utils.compute_first_order_difference(changed_data['offset'])
+
+# original values prescaled
+prescaled_offset_min = changed_data['offset'].min()
+prescaled_offset_max = changed_data['offset'].max() 
+prescaled_duration_min = changed_data['duration_ppq'].min()  
+prescaled_duration_max = changed_data['duration_ppq'].max() 
+min_pitch = 0 
+max_pitch = 127
+
+#scaled
+changed_data['offset'] = utils.min_max_scale(changed_data['offset'])
+changed_data['duration_ppq'] = utils.min_max_scale(changed_data['duration_ppq'])
+changed_data['pitch'] = changed_data['pitch'].apply(ast.literal_eval).apply(lambda pitches: [(p - min_pitch) / (max_pitch - min_pitch) for p in pitches]) #since pitches are in a list
+
+#add columns to new data
+new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])    
 
 def root_mean_squared_error(actual, predicted):
     if len(actual) != len(predicted):
@@ -75,9 +96,9 @@ class TimeSeriesEnvironment:
             modified_duration = action_type[1][1] + self.last_state[1]
             modified_pitch_array = action_type[1][2:] + self.last_state[2]
         #clipping the values now: 
-        modified_offset = max(modified_offset, self.last_state[0])
+        #modified_offset = max(modified_offset, self.last_state[0])
         modified_duration = max(modified_duration, 0)  # Second clipping if it's larger than previous offset value
-        modified_pitch_array = np.clip(modified_pitch_array, -1, 127)  # Clip the second action
+        modified_pitch_array = np.clip(modified_pitch_array, 0, 127)  # Clip the second action
 
         # modified pitch array should be rounded
         modified_pitch_array = [round(p) for p in modified_pitch_array]
@@ -89,8 +110,8 @@ class TimeSeriesEnvironment:
         #get the next value to reward based on the predicted value
         #DOUBLE CHECK IF IT SHOULD BE EQUAL
         if self.current_step+1 < self.max_generated_steps:
-            actual_row = data1.iloc[self.current_step+1]
-            self.real_state = (actual_row['offset'], actual_row['duration_ppq'], np.array(ast.literal_eval(actual_row['pitch'])))
+            actual_row = changed_data.iloc[self.current_step+1]
+            self.real_state = (actual_row['offset'], actual_row['duration_ppq'], np.array(actual_row['pitch']))
             #reward = -calculate_ncd(self.real_state, predicted_state)
             reward = -root_mean_squared_error(np.hstack(self.real_state), np.hstack(predicted_state))
         else:
@@ -117,9 +138,9 @@ class TimeSeriesEnvironment:
             modified_pitch_array = action_type[1][2:] + self.last_state[2]
         
         #clipping the values now:
-        modified_offset = max(modified_offset, self.last_state[0])
+        #modified_offset = max(modified_offset, self.last_state[0])
         modified_duration = max(modified_duration, 0)  # Second clipping if it's larger than previous offset value
-        modified_pitch_array = np.clip(modified_pitch_array, -1, 127)  # Clip the second action
+        modified_pitch_array = np.clip(modified_pitch_array, 0, 127)  # Clip the second action
         
         # modified pitch array should be rounded
         modified_pitch_array = [round(p) for p in modified_pitch_array]
@@ -130,8 +151,8 @@ class TimeSeriesEnvironment:
     
     # Access the row corresponding to the current step
     def _get_state(self):
-        row = data1.iloc[self.current_step]
-        state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
+        row = changed_data.iloc[self.current_step]
+        state = (row['offset'], row['duration_ppq'], np.array(row['pitch']))
         return state
 
 
@@ -256,8 +277,8 @@ def RunBestAgent(args):
     # stuff print("Priming")
     visited = []
     for x in range(MAX_STEPS_G-1):
-        row = data1.iloc[x]
-        state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
+        row = changed_data.iloc[x]
+        state = (row['offset'], row['duration_ppq'], np.array(row['pitch']))
         action_value = (agent.act(np.hstack((state[:2],state[2]))))
         print("state: ", state)
         print("action_value: ", action_value)
@@ -267,20 +288,26 @@ def RunBestAgent(args):
         action_value = (agent.act(np.hstack((env.last_state[:2],env.last_state[2]))))
 
         action_state = env.step_simulation(action_value)
-        # stuff print("action_state: ", action_state)
-
-        new_last_state = (action_state[0], action_state[1], np.array2string(np.array(action_state[2:]), separator=', '))
+        #REVERSE FOR STORAGE
+        reverse_action_state = action_state[0] + env.last_state[0]
+        new_last_state = (reverse_action_state, action_state[1], action_state[2])
 
         simulation_results.append(new_last_state)
         env.last_state = action_state
 
-    new_data = pd.DataFrame(simulation_results, columns=['offset', 'duration_ppq', 'pitch'])
-    new_data['pitch'] = new_data['pitch'].apply(str)    
-    updated_data = pd.concat([data1[:MAX_STEPS_G], new_data], ignore_index=True)
-    updated_data.to_csv('Simulation_14.csv', index=False)
-    
-    new_data = pd.DataFrame(simulation_results, columns=['offset', 'duration_ppq', 'pitch'])
-    new_data['pitch'] = new_data['pitch'].apply(str)
+    simulated_data = pd.DataFrame(simulation_results, columns=['offset', 'duration_ppq', 'pitch'])
+
+    #invert the scale for offset
+    simulated_data['offset'] = simulated_data['offset'].apply(lambda x: utils.invert_min_max_scale(x, prescaled_offset_min, prescaled_offset_max))
+    original_offsets = np.cumsum(np.insert(simulated_data['offset'].values, 0, starting_offset))[1:]
+    simulated_data['offset'] = original_offsets
+
+    #invert duration and pitches
+    simulated_data['duration_ppq'] = simulated_data['duration_ppq'].apply(lambda x: utils.invert_min_max_scale(x, prescaled_duration_min, prescaled_duration_max))
+    simulated_data['pitch'] = simulated_data['pitch'].apply(lambda pitches: [int(round(utils.invert_min_max_scale(p, min_pitch, max_pitch, feature_range=(0, 1)))) for p in pitches])
+
+    simulated_data = pd.concat([original_data[:MAX_STEPS_G], simulated_data], ignore_index=True)
+    simulated_data.to_csv('Simulation_14.csv', index=False)
 
 if __name__ == '__main__':
     tStart = time.time()
@@ -292,7 +319,7 @@ if __name__ == '__main__':
         trainer.configFunctions()
         print("LOADED TRAINER")
     else:
-        trainer = Trainer(actions=[MAX_PITCHES+2], teamPopSize=360, pActAtom=1.0, memType="default", operationSet="def")
+        trainer = Trainer(actions=[MAX_PITCHES+2], teamPopSize=200, pActAtom=1.0, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
@@ -331,7 +358,7 @@ if __name__ == '__main__':
                 prevbestscore = float('-inf') #starting value of negative infinity
                 looper = True
                 start_validation_time = time.time()
-                print("values")
+                print("Values")
                 while looper:
                     validationScores = man.list()
                     agents = trainer.getAgents()
@@ -341,7 +368,7 @@ if __name__ == '__main__':
                     
                     #the current best of this evolution
                     current_best_validation = trainer.getEliteAgent(task='validation')
-                    print(current_best_validation.team.outcomes['validation'])
+                    print("Validation Generation Score: ", current_best_validation.team.outcomes['validation'])
                     #save and retrieve best validation agent (since the best of gen != best)
                     if current_best_validation.team.outcomes['validation'] >= prevbestscore:
                         prevbestscore = current_best_validation.team.outcomes['validation']

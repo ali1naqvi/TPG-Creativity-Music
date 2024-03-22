@@ -30,7 +30,6 @@ def data_extraction(midi_data):
         # Append the current instrument's DataFrame to the full DataFrame
         df = pd.concat([df, instrument_df], ignore_index=True)
 
-    df = df.sort_values(by=['offset'])
     df.to_csv(inputname, index=False)
     print("CSV file saved.")
 
@@ -58,4 +57,4 @@ def plot_pitches(input_csv):
 if __name__ == '__main__':
     midi_data = pretty_midi.PrettyMIDI(midi_file)
     data_extraction(midi_data)
-    plot_pitches(inputname)
+    #plot_pitches(inputname)
