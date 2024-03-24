@@ -12,7 +12,7 @@ import utils
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 12
+GENERATIONS = 2012
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
