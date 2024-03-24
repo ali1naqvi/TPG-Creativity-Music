@@ -9,10 +9,11 @@ import zlib
 from pathlib import Path
 from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInstructionStats, pathDepths
 import utils
+#changes i made rn, 1200 gen, operations full, and 300 from 200 pop
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 2012
+GENERATIONS = 1200
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -277,15 +278,17 @@ def RunBestAgent(args):
 
     # stuff print("Priming")
     visited = []
-    for x in range(MAX_STEPS_G-1):
+    for x in range(MAX_STEPS_G):
         row = changed_data.iloc[x]
         state = (row['offset'], row['duration_ppq'], np.array(row['pitch']))
         action_value = (agent.act(np.hstack((state[:2],state[2]))))
+        print("step "+str(x)+" for state: ", np.hstack((state[:2],state[2])))
 
     print("Priming complete")
     for x in range(EXTRA_TIME_STEPS-1): 
+        print("FORECASTING: step "+str(x)+" for state: ", np.hstack((env.last_state[:2],env.last_state[2])))
         action_value = (agent.act(np.hstack((env.last_state[:2],env.last_state[2]))))
-
+        #print("action value:", action_value)
         action_state = env.step_simulation(action_value)
         new_last_state = (action_state[0], action_state[1], action_state[2])
         simulation_results.append(new_last_state)
@@ -302,21 +305,20 @@ def RunBestAgent(args):
 
     #invert duration and pitches
     simulated_data['duration_ppq'] = simulated_data['duration_ppq'].apply(lambda x: utils.invert_min_max_scale(x, prescaled_duration_min, prescaled_duration_max))
-        
     simulated_data['pitch'] = simulated_data['pitch'].apply(lambda pitches: [int(round(utils.invert_min_max_scale(p, min_pitch, max_pitch, feature_range=(0, 1)))) for p in pitches])
-    simulated_data.to_csv('Simulation_14.csv', index=False)
+    simulated_data.to_csv('Simulation_16.csv', index=False)
 
 if __name__ == '__main__':
     tStart = time.time()
-    trainer_checkpoint_path = Path("trainer_savepoint_14.pkl")
-    gen_checkpoint_path = Path("gen_savepoint_14.txt")
+    trainer_checkpoint_path = Path("trainer_savepoint_16.pkl")
+    gen_checkpoint_path = Path("gen_savepoint_16.txt")
 
     if trainer_checkpoint_path.exists():
         trainer = pickle.load(open(trainer_checkpoint_path, 'rb'))
         trainer.configFunctions()
         print("LOADED TRAINER")
     else:
-        trainer = Trainer(actions=[MAX_PITCHES+2], teamPopSize=200, pActAtom=1.0, memType="default", operationSet="def")
+        trainer = Trainer(actions=[MAX_PITCHES+2], teamPopSize=250, pActAtom=1.0, memType="default", operationSet="full")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
@@ -327,7 +329,7 @@ if __name__ == '__main__':
         gen_start = 0
 
     # Open a text file to write output
-    with open('results_14.txt', 'a' if gen_start > 0 else 'w') as file:
+    with open('results_16.txt', 'a' if gen_start > 0 else 'w') as file:
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
@@ -346,11 +348,11 @@ if __name__ == '__main__':
             teams = trainer.applyScores(scoreList)  
             
             champ = trainer.getEliteAgent(task='main')
-            champ.saveToFile("best_agent_14")
+            champ.saveToFile("best_agent_16")
 
             trainer.evolve(tasks=['main'])
             
-            validation_champion_path = Path("validation_champion_14")
+            validation_champion_path = Path("validation_champion_16")
             if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
                 prevbestscore = float('-inf') #starting value of negative infinity
                 looper = True
@@ -371,7 +373,7 @@ if __name__ == '__main__':
                         prevbestscore = current_best_validation.team.outcomes['validation']
                         
                         validationChamp = current_best_validation
-                        validationChamp.saveToFile("validation_champion_14")
+                        validationChamp.saveToFile("validation_champion_16")
                     else: 
                         #error check just in case file does not exist 
                         if validation_champion_path.exists():
@@ -381,7 +383,7 @@ if __name__ == '__main__':
                             validationChamp = trainer.getEliteAgent(task='validation')
                         print("validationchampion: ", validationChamp.team.outcomes)
                         print(f"Validation champ with the best test score with {validationChamp.team.outcomes['validation']} on test data.")
-                        with open("final_validation_scores_14.txt", 'w') as f:
+                        with open("final_validation_scores_16.txt", 'w') as f:
                             f.write(str(validationChamp.team.outcomes['validation']))
                         looper= False
                             
@@ -397,8 +399,8 @@ if __name__ == '__main__':
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
             file.write(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}\n")
 
-            trainer.saveToFile("trainer_savepoint_14.pkl")
-            with open("gen_savepoint_14.txt", 'w') as gen_file:
+            trainer.saveToFile("trainer_savepoint_16.pkl")
+            with open("gen_savepoint_16.txt", 'w') as gen_file:
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
@@ -408,7 +410,7 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("validation_champion_14", 'rb'))
+        champ = pickle.load(open("validation_champion_16", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)

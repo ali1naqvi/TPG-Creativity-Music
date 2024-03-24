@@ -4032,3 +4032,59 @@ Min, Max, Avg
 (-inf, -14.768517139601222, -inf)
 (-inf, -14.572540173589063, -inf)
 (-inf, -14.764003681100807, -inf)
+Trainer done: <tpg.trainer.Trainer object at 0x000002101A082650>
+Time Taken (Hours): 0.00018384204970465766
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x00000234AE992DD0>
+Time Taken (Hours): 0.00017107864220937093
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001FADCF42710>
+Time Taken (Hours): 0.0001728416813744439
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000002468F032C10>
+Time Taken (Hours): 0.0001845737960603502
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000023780B828D0>
+Time Taken (Hours): 0.00016567673948076036
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000020ABC895910>
+Time Taken (Hours): 0.00019122249550289577
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000002582B402E50>
+Time Taken (Hours): 0.00017267909314897325
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000016046752390>
+Time Taken (Hours): 0.00016869955592685275
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001AA675821D0>
+Time Taken (Hours): 0.0001760762267642551
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001EAF9222790>
+Time Taken (Hours): 0.00016614198684692383
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000025E803C2510>
+Time Taken (Hours): 0.00016113678614298503
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x00000129039924D0>
+Time Taken (Hours): 0.0001775168710284763
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000002157ED3C1D0>
+Time Taken (Hours): 0.00016955951849619548
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000023D654B2290>
+Time Taken (Hours): 0.00017153746551937528
+Final Results:
+Min, Max, Avg

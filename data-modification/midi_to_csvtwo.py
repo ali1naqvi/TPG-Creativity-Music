@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-inputname = "input.csv"
+inputname = "simulation_15.csv"
 midi_file = "test_files/fur_elise.mid"
 
 def data_extraction(midi_data):
@@ -41,7 +41,7 @@ def plot_pitches(input_csv):
     ax = plt.gca()
     
     # Now that 'pitch' contains numeric data, we can plot it
-    df.reset_index().plot(kind='line', x='offset', y='duration_ppq', ax=ax, legend=False, linewidth=0.8)
+    df.reset_index().plot(kind='line', y='duration_ppq', ax=ax, legend=False, linewidth=0.8)
 
     # Set title and labels with increased font size
     plt.title("Pitch Duration Representation of 'Fur Elise'", fontsize=16)
@@ -56,5 +56,5 @@ def plot_pitches(input_csv):
     
 if __name__ == '__main__':
     midi_data = pretty_midi.PrettyMIDI(midi_file)
-    data_extraction(midi_data)
-    #plot_pitches(inputname)
+    #data_extraction(midi_data)
+    plot_pitches(inputname)
