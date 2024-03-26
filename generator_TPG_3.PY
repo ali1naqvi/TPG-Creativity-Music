@@ -9,7 +9,10 @@ import zlib
 from pathlib import Path
 from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInstructionStats, pathDepths
 import utils
-#changes i made rn, 1200 gen, operations full, and 300 from 200 pop
+#changes i made for _14, 2000 gen, operations def, and 200 pop
+#changes i made for _16, 1200 gen, operations full, and 300 pop (ALSO CHANGED TO LIST FOR PITCHES)
+#changes i made for _17, 1200 gen, operations full, and 200 pop (ALSO CHANGED TO LIST FOR PITCHES)
+#changes i made for _18, 1200 gen, operations def, and 200 pop (ALSO CHANGED TO LIST FOR PITCHES)
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
@@ -20,7 +23,6 @@ DATA_DIVISION = 0.5
 EP_LENGTH = 100
 
 original_data = pd.read_csv("input.csv", header = 0)
-original_data['pitch'] = original_data['pitch'].apply(ast.literal_eval) #convert all strings to list
 changed_data = original_data
 
 MAX_PITCHES =  1  #changed_data['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece, will be one
@@ -40,7 +42,7 @@ max_pitch = 127
 #scaled
 changed_data['offset'] = utils.min_max_scale(changed_data['offset'])
 changed_data['duration_ppq'] = utils.min_max_scale(changed_data['duration_ppq'])
-changed_data['pitch'] = changed_data['pitch'].apply(lambda pitches: [(p - min_pitch) / (max_pitch - min_pitch) for p in pitches]) #since pitches are in a list
+changed_data['pitch'] = utils.min_max_scale(changed_data['pitch'])
 
 #add columns to new data
 new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])    
@@ -88,33 +90,21 @@ class TimeSeriesEnvironment:
         done = False
         reward = 0
             
-        #intuition is that if its the first atomic action, it will directly use the value, else (second atomic action), it will apply the change to the previous
-        if action_type[0] == 0:
-            modified_offset = action_type[1][0] #+ self.last_state[0]
-            modified_duration = action_type[1][1] #+ self.last_state[1]
-            modified_pitch_array = action_type[1][2:] #+ self.last_state[2]
-        else: 
-            modified_offset = action_type[1][0] + self.last_state[0]
-            modified_duration = action_type[1][1] + self.last_state[1]
-            modified_pitch_array = action_type[1][2:] + self.last_state[2]
-        #clipping the values now: 
-        #modified_offset = max(modified_offset, self.last_state[0])
-        modified_duration = max(modified_duration, 0)  # Second clipping if it's larger than previous offset value
-        modified_pitch_array = np.clip(modified_pitch_array, 0, 127)  # Clip the second action
+        action_id, action_values = action_type
+        modified_offset, modified_duration, modified_pitch_array = action_values
 
-        # modified pitch array should be rounded
-        modified_pitch_array = [round(p) for p in modified_pitch_array]
-        predicted_state = (modified_offset, modified_duration, modified_pitch_array)
+        # Clip the values to ensure they are within the valid range
+        modified_offset = np.clip(modified_offset, 0, 1)
+        modified_duration = np.clip(modified_duration, 0, 1)
+        modified_pitch_array = np.clip(modified_pitch_array, 0, 1)  # Assuming modified_pitch_array can be directly used with np.clip
         
+        predicted_state = (modified_offset, modified_duration, modified_pitch_array)
+
         #check if we reached the end, calculate the reward 
                 #0 - 20           #20
-         
-        #get the next value to reward based on the predicted value
-        #DOUBLE CHECK IF IT SHOULD BE EQUAL
         if self.current_step+1 < self.max_generated_steps:
             actual_row = changed_data.iloc[self.current_step+1]
-            self.real_state = (actual_row['offset'], actual_row['duration_ppq'], np.array(actual_row['pitch']))
-            #reward = -calculate_ncd(self.real_state, predicted_state)
+            self.real_state = (actual_row['offset'], actual_row['duration_ppq'], actual_row['pitch'])
             reward = -root_mean_squared_error(np.hstack(self.real_state), np.hstack(predicted_state))
         else:
             #end of dataset
@@ -129,23 +119,14 @@ class TimeSeriesEnvironment:
 
     def step_simulation(self, action_type):
         # stuff print(action_type)
+        action_id, action_values = action_type
+        modified_offset, modified_duration, modified_pitch_array = action_values
+
+        # Clip the values to ensure they are within the valid range
+        modified_offset = np.clip(modified_offset, 0, 1)
+        modified_duration = np.clip(modified_duration, 0, 1)
+        modified_pitch_array = np.clip(modified_pitch_array, 0, 1)  # Assuming modified_pitch_array can be directly used with np.clip
         
-        if action_type[0] == 0:
-            modified_offset = action_type[1][0] #+ self.last_state[0]
-            modified_duration = action_type[1][1] #+ self.last_state[1]
-            modified_pitch_array = action_type[1][2:] #+ self.last_state[2]
-        else: 
-            modified_offset = action_type[1][0] + self.last_state[0]
-            modified_duration = action_type[1][1] + self.last_state[1]
-            modified_pitch_array = action_type[1][2:] + self.last_state[2]
-        
-        #clipping the values now:
-        #modified_offset = max(modified_offset, self.last_state[0])
-        modified_duration = max(modified_duration, 0)  # Second clipping if it's larger than previous offset value
-        modified_pitch_array = np.clip(modified_pitch_array, 0, 127)  # Clip the second action
-        
-        # modified pitch array should be rounded
-        modified_pitch_array = [round(p) for p in modified_pitch_array]
         predicted_state = (modified_offset, modified_duration, modified_pitch_array)
         
         self.current_step +=1
@@ -154,7 +135,7 @@ class TimeSeriesEnvironment:
     # Access the row corresponding to the current step
     def _get_state(self):
         row = changed_data.iloc[self.current_step]
-        state = (row['offset'], row['duration_ppq'], np.array(row['pitch']))
+        state = (row['offset'], row['duration_ppq'], row['pitch'])
         return state
 
 
@@ -185,16 +166,14 @@ def runAgent(args):
             #prime first half of the episode
             # stuff  print("modifying: ", ((ep * episode_length) + priming_steps), "with episode: ", ep)
             if ((ep * episode_length) + priming_steps) > env.current_step:
-                action_value = (agent.act(np.hstack((action_state[:2],action_state[2]))))
+                action_value = (agent.act(np.hstack(action_state)))
                 env.current_step += 1 #increase step in environment
                 action_state = env._get_state()
                 predicted_state = action_state #updating predicted
             #second half of episode
             else:
-                #print("forecasting with step: ", env.current_step, "with state: ", predicted_state)
-                #after direct steps, it will take the predicted value produced then 
-                predicted_state = np.hstack((predicted_state[:2],predicted_state[2]))
-                action_value = (agent.act(predicted_state))
+                #after direct steps, it will take the predicted value produced
+                action_value = (agent.act(np.hstack(predicted_state)))
                 # stuff  print("step now: ", env.current_step, "with step: ", predicted_state)
                 action_state, predicted_state, reward, isDone = env.step(action_value, forecasting=True) #now fix step 
                 
@@ -239,20 +218,19 @@ def RunValidationAgents(args):
             #prime first half of the episode
             #intuition: multiplication of episode and length gives us the starting step + priming steps gives us where the forecasting should start
             if ((ep * episode_length) + priming_steps) > env.current_step:
-                action_value = (agent.act(np.hstack((action_state[:2],action_state[2]))))
+                action_value = (agent.act(np.hstack(action_state)))
                 env.current_step +=1 #increase step in environment
                 action_state = env._get_state()
             #second half of episode
             else:
                 if counter_direct < (priming_steps / 2):
-                    action_value = (agent.act(np.hstack((action_state[:2],action_state[2]))))
+                    action_value = (agent.act(np.hstack(action_state)))
                     env.current_step +=1 #increase step in environment
                     action_state = env._get_state()
                     predicted_state = action_state
                     counter_direct +=1
                 else:
-                    predicted_state = np.hstack((predicted_state[:2],predicted_state[2]))
-                    action_value = (agent.act(predicted_state))
+                    action_value = (agent.act(np.hstack(predicted_state)))
                     action_state, predicted_state, reward, isDone = env.step(action_value, forecasting=True) #now fix step 
                 
             # Apply clipping to continuous actions : action_value 
@@ -280,14 +258,14 @@ def RunBestAgent(args):
     visited = []
     for x in range(MAX_STEPS_G):
         row = changed_data.iloc[x]
-        state = (row['offset'], row['duration_ppq'], np.array(row['pitch']))
-        action_value = (agent.act(np.hstack((state[:2],state[2]))))
-        print("step "+str(x)+" for state: ", np.hstack((state[:2],state[2])))
+        state = (row['offset'], row['duration_ppq'], row['pitch'])
+        action_value = (agent.act(np.hstack(state)))
+        print("step "+str(x)+" for state: ", np.hstack(state))
 
     print("Priming complete")
     for x in range(EXTRA_TIME_STEPS-1): 
-        print("FORECASTING: step "+str(x)+" for state: ", np.hstack((env.last_state[:2],env.last_state[2])))
-        action_value = (agent.act(np.hstack((env.last_state[:2],env.last_state[2]))))
+        print("FORECASTING: step "+str(x)+" for state: ", np.hstack((env.last_state)))
+        action_value = (agent.act(np.hstack(env.last_state)))
         #print("action value:", action_value)
         action_state = env.step_simulation(action_value)
         new_last_state = (action_state[0], action_state[1], action_state[2])
@@ -305,13 +283,13 @@ def RunBestAgent(args):
 
     #invert duration and pitches
     simulated_data['duration_ppq'] = simulated_data['duration_ppq'].apply(lambda x: utils.invert_min_max_scale(x, prescaled_duration_min, prescaled_duration_max))
-    simulated_data['pitch'] = simulated_data['pitch'].apply(lambda pitches: [int(round(utils.invert_min_max_scale(p, min_pitch, max_pitch, feature_range=(0, 1)))) for p in pitches])
-    simulated_data.to_csv('Simulation_16.csv', index=False)
+    simulated_data['pitch'] = simulated_data['pitch'].apply(lambda x: round(utils.invert_min_max_scale(x, min_pitch, max_pitch)))
+    simulated_data.to_csv('Simulation_17.csv', index=False)
 
 if __name__ == '__main__':
     tStart = time.time()
-    trainer_checkpoint_path = Path("trainer_savepoint_16.pkl")
-    gen_checkpoint_path = Path("gen_savepoint_16.txt")
+    trainer_checkpoint_path = Path("trainer_savepoint_17.pkl")
+    gen_checkpoint_path = Path("gen_savepoint_17.txt")
 
     if trainer_checkpoint_path.exists():
         trainer = pickle.load(open(trainer_checkpoint_path, 'rb'))
@@ -329,7 +307,7 @@ if __name__ == '__main__':
         gen_start = 0
 
     # Open a text file to write output
-    with open('results_16.txt', 'a' if gen_start > 0 else 'w') as file:
+    with open('results_17.txt', 'a' if gen_start > 0 else 'w') as file:
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
@@ -348,11 +326,11 @@ if __name__ == '__main__':
             teams = trainer.applyScores(scoreList)  
             
             champ = trainer.getEliteAgent(task='main')
-            champ.saveToFile("best_agent_16")
+            champ.saveToFile("best_agent_17")
 
             trainer.evolve(tasks=['main'])
             
-            validation_champion_path = Path("validation_champion_16")
+            validation_champion_path = Path("validation_champion_17")
             if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
                 prevbestscore = float('-inf') #starting value of negative infinity
                 looper = True
@@ -373,7 +351,7 @@ if __name__ == '__main__':
                         prevbestscore = current_best_validation.team.outcomes['validation']
                         
                         validationChamp = current_best_validation
-                        validationChamp.saveToFile("validation_champion_16")
+                        validationChamp.saveToFile("validation_champion_17")
                     else: 
                         #error check just in case file does not exist 
                         if validation_champion_path.exists():
@@ -383,7 +361,7 @@ if __name__ == '__main__':
                             validationChamp = trainer.getEliteAgent(task='validation')
                         print("validationchampion: ", validationChamp.team.outcomes)
                         print(f"Validation champ with the best test score with {validationChamp.team.outcomes['validation']} on test data.")
-                        with open("final_validation_scores_16.txt", 'w') as f:
+                        with open("final_validation_scores_17.txt", 'w') as f:
                             f.write(str(validationChamp.team.outcomes['validation']))
                         looper= False
                             
@@ -399,8 +377,8 @@ if __name__ == '__main__':
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
             file.write(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}\n")
 
-            trainer.saveToFile("trainer_savepoint_16.pkl")
-            with open("gen_savepoint_16.txt", 'w') as gen_file:
+            trainer.saveToFile("trainer_savepoint_17.pkl")
+            with open("gen_savepoint_17.txt", 'w') as gen_file:
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
@@ -410,7 +388,7 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("validation_champion_16", 'rb'))
+        champ = pickle.load(open("validation_champion_17", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)
