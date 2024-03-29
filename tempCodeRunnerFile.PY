@@ -1,5 +1,1 @@
-        champ = trainer.getEliteAgent(task='task')
-        print(champ.team)
-        print(champ.team.fitness)
-        print(champ.team.learners)
-        print(champ.team.outcomes)
+round

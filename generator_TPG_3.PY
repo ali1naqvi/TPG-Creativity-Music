@@ -9,25 +9,23 @@ import zlib
 from pathlib import Path
 from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInstructionStats, pathDepths
 import utils
-#changes i made for _14, 2000 gen, operations def, and 200 pop
-#changes i made for _16, 1200 gen, operations full, and 300 pop 
-#changes i made for _17, 1200 gen, operations full, and 200 pop (ALSO CHANGED TO LIST FOR PITCHES)
 #changes i made for _18, 1200 gen, operations def, and 200 pop (ALSO CHANGED TO LIST FOR PITCHES)
+#changes i made for _19, 2500 gen, operations def, and 150 pop (ALSO CHANGED TO LIST FOR PITCHES)
+#changes i made for _20, 2500 gen, operations full, and 150 pop (ALSO CHANGED TO LIST FOR PITCHES)
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 1200
+GENERATIONS = 2500
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
 EP_LENGTH = 100
 
-original_data = pd.read_csv("input.csv", header = 0)
-changed_data = original_data
+original_data = pd.read_csv("input.csv")
+changed_data = pd.read_csv("input.csv")
 
-MAX_PITCHES =  1  #changed_data['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece, will be one
-starting_offset = changed_data['offset'][0] #the starting offset (for reversing)
-
+starting_offset = changed_data['offset'].iloc[MAX_STEPS_G] #the starting offset will be the last as we forecast beyond this value (for reversing)
+#MAX_PITCHES =  1  #changed_data['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece, will be one
 #change offset to first order difference (FOD)
 changed_data['offset'] = utils.compute_first_order_difference(changed_data['offset'])
 
@@ -250,53 +248,61 @@ def RunValidationAgents(args):
 def RunBestAgent(args):
     agent, scoreList = args
     # Initialize the environment but starting from the end of the data
-    env = TimeSeriesEnvironment(current_step_g=MAX_STEPS_G-1)
 
     simulation_results = []
 
     # stuff print("Priming")
-    visited = []
+    # 0 to 799 (inclusive)
     for x in range(MAX_STEPS_G):
         row = changed_data.iloc[x]
-        state = (row['offset'], row['duration_ppq'], row['pitch'])
-        action_value = (agent.act(np.hstack(state)))
-        print("step "+str(x)+" for state: ", np.hstack(state))
+        last_state = (row['offset'], row['duration_ppq'], row['pitch'])
+        action_value = (agent.act(np.hstack(last_state)))
+        print("step "+str(x)+" for state: ", np.hstack(last_state))
+
+    #start at 800
+    env = TimeSeriesEnvironment()
+    print("what the last state is:", env.last_state)
+    print("Priming last state (offset) to start from: ", utils.invert_min_max_scale(last_state[2], min_pitch, max_pitch))
+    print("Priming last state (duration) to start from: ", utils.invert_min_max_scale(last_state[1], prescaled_duration_min, prescaled_duration_max))
 
     print("Priming complete")
     for x in range(EXTRA_TIME_STEPS-1): 
-        print("FORECASTING: step "+str(x)+" for state: ", np.hstack((env.last_state)))
-        action_value = (agent.act(np.hstack(env.last_state)))
+        print("FORECASTING: step "+str(x)+" for state: ", np.hstack((last_state)))
+        action_value = (agent.act(np.hstack(last_state)))
         #print("action value:", action_value)
         action_state = env.step_simulation(action_value)
-        new_last_state = (action_state[0], action_state[1], action_state[2])
-        simulation_results.append(new_last_state)
-        env.last_state = action_state
+        simulation_results.append(action_state)
+        last_state = action_state
     print("Simulation complete..")
+
     simulated_data = pd.DataFrame(simulation_results, columns=['offset', 'duration_ppq', 'pitch'])
 
     #invert the scale for offset
-    simulated_data = pd.concat([original_data[:MAX_STEPS_G], simulated_data], ignore_index=True)
     
-    simulated_data['offset'] = simulated_data['offset'].apply(lambda x: utils.invert_min_max_scale(x, prescaled_offset_min, prescaled_offset_max))
+    #change this to use final step 
     original_offsets = np.cumsum(np.insert(simulated_data['offset'].values, 0, starting_offset))[1:]
+    simulated_data['offset'] = simulated_data['offset'].apply(lambda x: round(utils.invert_min_max_scale(x, prescaled_offset_min, prescaled_offset_max), 7))
     simulated_data['offset'] = original_offsets
 
     #invert duration and pitches
-    simulated_data['duration_ppq'] = simulated_data['duration_ppq'].apply(lambda x: utils.invert_min_max_scale(x, prescaled_duration_min, prescaled_duration_max))
-    simulated_data['pitch'] = simulated_data['pitch'].apply(lambda x: round(utils.invert_min_max_scale(x, min_pitch, max_pitch)))
-    simulated_data.to_csv('Simulation_18.csv', index=False)
+    simulated_data['duration_ppq'] = simulated_data['duration_ppq'].apply(lambda x: round(utils.invert_min_max_scale(x, prescaled_duration_min, prescaled_duration_max), 3))
+    simulated_data['pitch'] = simulated_data['pitch'].apply(lambda x: utils.invert_min_max_scale(x, min_pitch, max_pitch))
+
+    simulated_data = pd.concat([original_data[:MAX_STEPS_G+1], simulated_data], ignore_index=True)
+    simulated_data['pitch'] = simulated_data['pitch'].round()
+    simulated_data.to_csv('Simulation_19.csv', index=False)
 
 if __name__ == '__main__':
     tStart = time.time()
-    trainer_checkpoint_path = Path("trainer_savepoint_18.pkl")
-    gen_checkpoint_path = Path("gen_savepoint_18.txt")
+    trainer_checkpoint_path = Path("trainer_savepoint_19.pkl")
+    gen_checkpoint_path = Path("gen_savepoint_19.txt")
 
     if trainer_checkpoint_path.exists():
         trainer = pickle.load(open(trainer_checkpoint_path, 'rb'))
         trainer.configFunctions()
         print("LOADED TRAINER")
     else:
-        trainer = Trainer(actions=[MAX_PITCHES+2], teamPopSize=150, pActAtom=1.0, memType="default", operationSet="def")
+        trainer = Trainer(actions=[3], teamPopSize=150, pActAtom=1.0, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
@@ -307,7 +313,7 @@ if __name__ == '__main__':
         gen_start = 0
 
     # Open a text file to write output
-    with open('results_18.txt', 'a' if gen_start > 0 else 'w') as file:
+    with open('results_19.txt', 'a' if gen_start > 0 else 'w') as file:
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
@@ -326,11 +332,11 @@ if __name__ == '__main__':
             teams = trainer.applyScores(scoreList)  
             
             champ = trainer.getEliteAgent(task='main')
-            champ.saveToFile("best_agent_18")
+            champ.saveToFile("best_agent_19")
 
             trainer.evolve(tasks=['main'])
             
-            validation_champion_path = Path("validation_champion_17")
+            validation_champion_path = Path("validation_champion_19")
             if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
                 prevbestscore = float('-inf') #starting value of negative infinity
                 looper = True
@@ -351,7 +357,7 @@ if __name__ == '__main__':
                         prevbestscore = current_best_validation.team.outcomes['validation']
                         
                         validationChamp = current_best_validation
-                        validationChamp.saveToFile("validation_champion_18")
+                        validationChamp.saveToFile("validation_champion_19")
                     else: 
                         #error check just in case file does not exist 
                         if validation_champion_path.exists():
@@ -361,7 +367,7 @@ if __name__ == '__main__':
                             validationChamp = trainer.getEliteAgent(task='validation')
                         print("validationchampion: ", validationChamp.team.outcomes)
                         print(f"Validation champ with the best test score with {validationChamp.team.outcomes['validation']} on test data.")
-                        with open("final_validation_scores_18.txt", 'w') as f:
+                        with open("final_validation_scores_19.txt", 'w') as f:
                             f.write(str(validationChamp.team.outcomes['validation']))
                         looper= False
                             
@@ -377,8 +383,8 @@ if __name__ == '__main__':
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
             file.write(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}\n")
 
-            trainer.saveToFile("trainer_savepoint_18.pkl")
-            with open("gen_savepoint_18.txt", 'w') as gen_file:
+            trainer.saveToFile("trainer_savepoint_19.pkl")
+            with open("gen_savepoint_19.txt", 'w') as gen_file:
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
@@ -388,7 +394,7 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("validation_champion_18", 'rb'))
+        champ = pickle.load(open("validation_champion_19", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)
@@ -399,5 +405,4 @@ if __name__ == '__main__':
 
         # Assuming RunBestAgent is a function you have defined earlier
         #empty array is: scorelist
-        
         RunBestAgent((champ, []))
