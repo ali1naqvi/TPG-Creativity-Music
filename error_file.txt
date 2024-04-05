@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/lustre07/scratch/alinaqvi/fur_elise_final/generator_TPG_4.PY", line 387, in <module>
+    with open("gen_savepoint_20.txt", 'w') as gen_file:
+OSError: [Errno 5] Input/output error: 'gen_savepoint_20.txt'
+slurmstepd: error: *** JOB 27367829 ON nc10223 CANCELLED AT 2024-04-05T15:16:28 DUE TO TIME LIMIT ***
