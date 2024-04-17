@@ -14,11 +14,10 @@ import utils
 #changes i made for _20, 2500 gen, operations full, and 150 pop (ALSO CHANGED TO LIST FOR PITCHES) SONG IS FUR ELISE
 #changes i made for _21, 2500 gen, operations def, and 150 pop initMaxTeamSize=5 CHANGE TO 10 initMaxProgSize=128 change to 100 SONG IS FUR ELISE
 #changes i made for _22, same as 21 but weighted rmse now
-#changes i made for _23, same as 21 but more generations
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 5000
+GENERATIONS = 2500
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -50,16 +49,14 @@ changed_data['pitch'] = utils.min_max_scale(changed_data['pitch'])
 new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])    
 
 def root_mean_squared_error(actual, predicted):
-    #instead of 0.33, change the rmse so it focuses more on the pitches
-    weights = [0.25, 0.25, 0.50]
     if len(actual) != len(predicted):
         raise ValueError("The length of actual and predicted lists must be the same.")
+    
     sum_squared_error = 0
     for a, p in zip(actual, predicted):
         sum_squared_error += (a - p) ** 2
     rmse = (sum_squared_error / len(actual)) ** 0.5
     return rmse 
-
 
 #environment
 class TimeSeriesEnvironment:
@@ -308,7 +305,7 @@ if __name__ == '__main__':
         trainer.configFunctions()
         print("LOADED TRAINER")
     else:
-        trainer = Trainer(actions=[3], teamPopSize=150, initMaxTeamSize=10, initMaxProgSize=100, pActAtom=1.0, memType="default", operationSet="def")
+        trainer = Trainer(actions=[1], teamPopSize=150, initMaxTeamSize=10, initMaxProgSize=100, pActAtom=1.0, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():

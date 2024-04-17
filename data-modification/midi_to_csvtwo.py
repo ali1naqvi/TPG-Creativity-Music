@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-inputname = "simulation_20.csv"
+inputname = "simulation_19.csv"
 midi_file = "test_files/fur_elise.mid"
 
 def data_extraction(midi_data):
@@ -51,7 +51,7 @@ def plot_pitches(input_csv):
     ax.tick_params(axis='both', which='major', labelsize=12)
 
     plt.show()
-
+ 
     
 if __name__ == '__main__':
     midi_data = pretty_midi.PrettyMIDI(midi_file)
