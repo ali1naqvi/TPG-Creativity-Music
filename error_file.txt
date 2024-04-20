@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/lustre07/scratch/alinaqvi/fur_elise_final/generator_TPG_4.PY", line 403, in <module>
+    champ = pickle.load(open("validation_champion_23", 'rb'))
+FileNotFoundError: [Errno 2] No such file or directory: 'validation_champion_23'
