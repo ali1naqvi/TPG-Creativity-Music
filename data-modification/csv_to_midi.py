@@ -34,10 +34,10 @@ def create_midi_from_csv(note_data, output_file, instrument_program=0):
     pm.write(output_file)
 
 if __name__ == '__main__':
-    df_notes = pd.read_csv('simulation_21.csv')
+    df_notes = pd.read_csv('simulation_23.csv')
 
     # Convert the DataFrame to a list of dictionaries
     note_data = df_notes.to_dict('records')
 
     # Now you can pass this list to the function
-    create_midi_from_csv(note_data, 'output_predictions_21.mid')
+    create_midi_from_csv(note_data, 'output_predictions_testing.mid')

@@ -10002,3 +10002,19 @@ Min, Max, Avg
 (-24.48868842950874, -7.341186476413252, -8.187489971682144)
 (-26.483942209475373, -7.341186476413252, -8.271587487358186)
 (-15.587203294858442, -7.341186465054223, -8.135942391087045)
+Trainer done: <tpg.trainer.Trainer object at 0x000001539F609D50>
+Time Taken (Hours): 0.00016622834735446505
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001DFE9749C50>
+Time Taken (Hours): 0.00016585893101162382
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001D308229410>
+Time Taken (Hours): 0.00015779568089379205
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x00000261E78392D0>
+Time Taken (Hours): 0.00016492274072435166
+Final Results:
+Min, Max, Avg
