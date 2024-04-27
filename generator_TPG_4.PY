@@ -19,7 +19,7 @@ import utils
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 200000
+GENERATIONS = 2500
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -49,6 +49,7 @@ changed_data['pitch'] = utils.min_max_scale(changed_data['pitch'])
 
 #add columns to new data
 new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])   
+epsilon = 1e-10#small number near zero
  
 '''def root_mean_squared_error(actual, predicted):
     if len(actual) != len(predicted):
@@ -63,11 +64,10 @@ new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'
 def theil_u_statistic(actual, predicted, actual_next):
     if len(actual) != len(predicted):
         raise ValueError("The length of actual and predicted lists must be the same.")
-    numerator = denominator = 0
-    for a, p, p_a in zip(actual, predicted, actual_next):
-        numerator += (a - p) ** 2
-        denominator += (a - p_a) ** 2
-    return numerator/denominator
+    numerator = sum((a - p) ** 2 for a, p in zip(actual, predicted))
+    denominator = sum((a - n) ** 2 for a, n in zip(actual, actual_next))
+    denominator = denominator if denominator != 0 else epsilon
+    return (numerator / denominator) ** 0.5
 
 
 #environment
