@@ -16,10 +16,12 @@ import utils
 #changes i made for _22, same as 21 but weighted rmse now
 #changes i made for _23, same as 21 but more generations
 #changes i made for _24, using new fitness function (theil)
+#changes i made for _25, using MSE function with direction composition (gen4)
+#changes i made for _26, using NCD with envelope (gen3)
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 5000
+GENERATIONS = 500
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -51,15 +53,26 @@ changed_data['pitch'] = utils.min_max_scale(changed_data['pitch'])
 new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])   
 epsilon = 1e-10#small number near zero
  
-'''def root_mean_squared_error(actual, predicted):
+def root_mean_squared_error(actual, predicted):
     if len(actual) != len(predicted):
         raise ValueError("The length of actual and predicted lists must be the same.")
     sum_squared_error = 0
     for a, p in zip(actual, predicted):
         sum_squared_error += (a - p) ** 2
-    rmse = (sum_squared_error / len(actual)) ** 0.5
-    return rmse 
-'''
+    mse = (sum_squared_error / len(actual)) # ** 0.5
+    return mse 
+
+def composite_score(predictions, actuals, w1=0.5, w2=0.5):
+    rmse = root_mean_squared_error(actuals, predictions)
+    # Calculate Hit Rate
+    direction_pred = np.sign(np.diff(predictions))
+    direction_actual = np.sign(np.diff(actuals))
+    hit_rate = np.mean(direction_pred == direction_actual)
+    
+    # Compute Composite Score
+    composite_score = w1 * (1 - rmse) + w2 * hit_rate
+    return composite_score
+
 
 def theil_u_statistic(actual, predicted, actual_next):
     if len(actual) != len(predicted):
@@ -117,11 +130,11 @@ class TimeSeriesEnvironment:
                 #0 - 20           #20
         if self.current_step+1 < self.max_generated_steps:
             actual_row = changed_data.iloc[self.current_step+1]
-            next_row = changed_data.iloc[self.current_step+2]
-            next_real_state = (next_row['offset'], next_row['duration_ppq'], next_row['pitch'])
+            #next_row = changed_data.iloc[self.current_step+2]
+            #next_real_state = (next_row['offset'], next_row['duration_ppq'], next_row['pitch'])
             self.real_state = (actual_row['offset'], actual_row['duration_ppq'], actual_row['pitch'])
-            #reward = -root_mean_squared_error(np.hstack(self.real_state), np.hstack(predicted_state))
-            reward = -theil_u_statistic(np.hstack(self.real_state), np.hstack(predicted_state), np.hstack(next_real_state))
+            reward = -root_mean_squared_error(np.hstack(self.real_state), np.hstack(predicted_state))
+            #reward = -theil_u_statistic(np.hstack(self.real_state), np.hstack(predicted_state), np.hstack(next_real_state))
         else:
             #end of dataset
             done = True
@@ -308,12 +321,12 @@ def RunBestAgent(args):
 
     simulated_data = pd.concat([original_data[:MAX_STEPS_G+1], simulated_data], ignore_index=True)
     simulated_data['pitch'] = simulated_data['pitch'].round()
-    simulated_data.to_csv('Simulation_24.csv', index=False)
+    simulated_data.to_csv('Simulation_25.csv', index=False)
 
 if __name__ == '__main__':
     tStart = time.time()
-    trainer_checkpoint_path = Path("trainer_savepoint_24.pkl")
-    gen_checkpoint_path = Path("gen_savepoint_24.txt")
+    trainer_checkpoint_path = Path("trainer_savepoint_25.pkl")
+    gen_checkpoint_path = Path("gen_savepoint_25.txt")
 
     if trainer_checkpoint_path.exists():
         trainer = pickle.load(open(trainer_checkpoint_path, 'rb'))
@@ -331,7 +344,7 @@ if __name__ == '__main__':
         gen_start = 0
 
     # Open a text file to write output
-    with open('results_24.txt', 'a' if gen_start > 0 else 'w') as file:
+    with open('results_25.txt', 'a' if gen_start > 0 else 'w') as file:
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
@@ -350,11 +363,11 @@ if __name__ == '__main__':
             teams = trainer.applyScores(scoreList)  
             
             champ = trainer.getEliteAgent(task='main')
-            champ.saveToFile("best_agent_24")
+            champ.saveToFile("best_agent_25")
 
             trainer.evolve(tasks=['main'])
             
-            validation_champion_path = Path("validation_champion_24")
+            validation_champion_path = Path("validation_champion_25")
             if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
                 prevbestscore = float('-inf') #starting value of negative infinity
                 looper = True
@@ -375,7 +388,7 @@ if __name__ == '__main__':
                         prevbestscore = current_best_validation.team.outcomes['validation']
                         
                         validationChamp = current_best_validation
-                        validationChamp.saveToFile("validation_champion_24")
+                        validationChamp.saveToFile("validation_champion_25")
                     else: 
                         #error check just in case file does not exist 
                         if validation_champion_path.exists():
@@ -385,7 +398,7 @@ if __name__ == '__main__':
                             validationChamp = trainer.getEliteAgent(task='validation')
                         print("validationchampion: ", validationChamp.team.outcomes)
                         print(f"Validation champ with the best test score with {validationChamp.team.outcomes['validation']} on test data.")
-                        with open("final_validation_scores_24.txt", 'w') as f:
+                        with open("final_validation_scores_25.txt", 'w') as f:
                             f.write(str(validationChamp.team.outcomes['validation']))
                         looper= False
                             
@@ -401,8 +414,8 @@ if __name__ == '__main__':
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
             file.write(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}\n")
 
-            trainer.saveToFile("trainer_savepoint_24.pkl")
-            with open("gen_savepoint_24.txt", 'w') as gen_file:
+            trainer.saveToFile("trainer_savepoint_25.pkl")
+            with open("gen_savepoint_25.txt", 'w') as gen_file:
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
@@ -412,7 +425,7 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("best_agent_24", 'rb'))
+        champ = pickle.load(open("best_agent_25", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)

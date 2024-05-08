@@ -18,38 +18,63 @@ import multiprocessing
 import numpy as np
 import pandas as pd
 import zlib, ast
-
-
-#values that can be modified for testing 
-MAX_STEPS_G = 14 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 50
-EXTRA_TIME_STEPS  = 10 #number of wanted generated values 
-NUM_EP = 50 #number of episodes for RL 
-STARTING_STEP = 0 #starting step
-
-data1 = pd.read_csv("input.csv", header = 0)
-
-MAX_PITCHES = data1['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece
+import utils
  
 #memory size
 memory_size = 15
 
+#values that can be modified for testing 
+MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
+GENERATIONS = 2500
+EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
+STARTING_STEP = 0 #starting step
+DATA_DIVISION = 0.5
+EP_LENGTH = 100
 
-#reward function, using Normalized Compression Distance
-def calculate_ncd(seq1, seq2):
-    seq1 = np.hstack(seq1)
-    seq2 = np.hstack(seq2)
-    # Serialize sequences
-    seq1_bytes = str(seq1).encode()
-    seq2_bytes = str(seq2).encode()
 
-    # Compress individual sequences and concatenated sequence
-    c_x = len(zlib.compress(seq1_bytes))
-    c_y = len(zlib.compress(seq2_bytes))
-    c_xy = len(zlib.compress(seq1_bytes + seq2_bytes))
+original_data = pd.read_csv("input.csv")
+changed_data = pd.read_csv("input.csv")
 
-    ncd = (c_xy - min(c_x, c_y)) / max(c_x, c_y)
-    return ncd
+starting_offset = changed_data['offset'].iloc[MAX_STEPS_G] #the starting offset will be the last as we forecast beyond this value (for reversing)
+#MAX_PITCHES =  1  #changed_data['pitch'].apply(ast.literal_eval).apply(len).max() #max pitches played in a step for whole piece, will be one
+#change offset to first order difference (FOD)
+changed_data['offset'] = utils.compute_first_order_difference(changed_data['offset'])
+
+# original values prescaled
+prescaled_offset_min = changed_data['offset'].min()
+prescaled_offset_max = changed_data['offset'].max() 
+prescaled_duration_min = changed_data['duration_ppq'].min()  
+prescaled_duration_max = changed_data['duration_ppq'].max() 
+min_pitch = 0 
+max_pitch = 127
+
+#scaled
+changed_data['offset'] = utils.min_max_scale(changed_data['offset'])
+changed_data['duration_ppq'] = utils.min_max_scale(changed_data['duration_ppq'])
+changed_data['pitch'] = utils.min_max_scale(changed_data['pitch'])
+
+#add columns to new data
+new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])   
+epsilon = 1e-10#small number near zero
+ 
+'''def root_mean_squared_error(actual, predicted):
+    if len(actual) != len(predicted):
+        raise ValueError("The length of actual and predicted lists must be the same.")
+    sum_squared_error = 0
+    for a, p in zip(actual, predicted):
+        sum_squared_error += (a - p) ** 2
+    rmse = (sum_squared_error / len(actual)) ** 0.5
+    return rmse 
+'''
+
+def theil_u_statistic(actual, predicted, actual_next):
+    if len(actual) != len(predicted):
+        raise ValueError("The length of actual and predicted lists must be the same.")
+    numerator = sum((a - p) ** 2 for a, p in zip(actual, predicted))
+    denominator = sum((a - n) ** 2 for a, n in zip(actual, actual_next))
+    denominator = denominator if denominator != 0 else epsilon
+    return (numerator / denominator) ** 0.5
+
 
 #environment
 class TimeSeriesEnvironment:
@@ -61,10 +86,15 @@ class TimeSeriesEnvironment:
         #starts off at 0, getting the 0th row in the dataset
         self.last_state = self._get_state()
 
-    def reset(self):
+    def reset(self, episodenum, window_size):
         # Resets to the starting step we want
-        self.current_step = STARTING_STEP
+        
+        self.current_step = episodenum * window_size 
 
+        #0 to 20, subtract 1  
+        # stuff print("current step: ", self.current_step)
+        self.max_generated_steps = (self.current_step + window_size)
+        # stuff print("max generated step: ", self.max_generated_steps)
         self.last_state = self._get_state() 
 
         return self.last_state
@@ -72,56 +102,53 @@ class TimeSeriesEnvironment:
 
 #get predicted step and compare with the actual value
     
-#first step: 0, last step:  19. len: 20
-    def step(self, action_type):
+#first step: 0, last step:  19. len: 20s
+    def step(self, action_type, forecasting=False):
 
         #reset values 
         done = False
         reward = 0
+            
+        action_id, action_values = action_type
+        modified_offset, modified_duration, modified_pitch_array = action_values
 
-        #get the state we are on
-        self.last_state = self._get_state()
-
-        modified_offset = action_type[0] #+ self.last_state[0]
-        modified_duration = action_type[1] #+ self.last_state[1]
-        modified_pitch_array = action_type[2:] #+ self.last_state[2]
-        #clipping the values now: 
-        modified_offset = np.clip(modified_offset, action_type[0], None)  # Clip the first action
-        modified_duration = np.clip(modified_duration, 0, None)  # Second clipping if it's larger than previous offset value
-        modified_pitch_array = np.clip(modified_pitch_array, -1, 127)  # Clip the second action
-
-        # modified pitch array should be rounded
-        modified_pitch_array = [round(p) for p in modified_pitch_array]
-        predicted_state = (modified_offset, modified_duration, modified_pitch_array)
+        # Clip the values to ensure they are within the valid range
+        modified_offset = np.clip(modified_offset, 0, 1)
+        modified_duration = np.clip(modified_duration, 0, 1)
+        modified_pitch_array = np.clip(modified_pitch_array, 0, 1)  # Assuming modified_pitch_array can be directly used with np.clip
         
+        predicted_state = (modified_offset, modified_duration, modified_pitch_array)
+
         #check if we reached the end, calculate the reward 
-                #0 - 19           #20 
-        #get the next value to reward based on the predicted value
-        if self.current_step+1 < len(data1):
-            actual_row = data1.iloc[self.current_step+1]
-            self.real_state = (actual_row['offset'], actual_row['duration_ppq'], np.array(ast.literal_eval(actual_row['pitch'])))
-            reward = -calculate_ncd(predicted_state, self.real_state)
+                #0 - 20           #20
+        if self.current_step+1 < self.max_generated_steps:
+            actual_row = changed_data.iloc[self.current_step+1]
+            next_row = changed_data.iloc[self.current_step+2]
+            next_real_state = (next_row['offset'], next_row['duration_ppq'], next_row['pitch'])
+            self.real_state = (actual_row['offset'], actual_row['duration_ppq'], actual_row['pitch'])
+            #reward = -root_mean_squared_error(np.hstack(self.real_state), np.hstack(predicted_state))
+            reward = -theil_u_statistic(np.hstack(self.real_state), np.hstack(predicted_state), np.hstack(next_real_state))
         else:
             #end of dataset
             done = True
 
+        if forecasting == True:
+            self.last_state = predicted_state
+        else:
+            self.last_state = self._get_state()
         self.current_step +=1
-        return self.last_state, reward, done
+        return self.last_state, predicted_state, reward, done
 
     def step_simulation(self, action_type):
+        # stuff print(action_type)
+        action_id, action_values = action_type
+        modified_offset, modified_duration, modified_pitch_array = action_values
+
+        # Clip the values to ensure they are within the valid range
+        modified_offset = np.clip(modified_offset, 0, 1)
+        modified_duration = np.clip(modified_duration, 0, 1)
+        modified_pitch_array = np.clip(modified_pitch_array, 0, 1)  # Assuming modified_pitch_array can be directly used with np.clip
         
-         # Apply continuous actions to the state 
-        modified_offset = action_type[0]
-        modified_duration = action_type[1]
-        modified_pitch_array = np.array(action_type[2:])
-        
-        #clipping the values now: 
-        modified_offset = np.clip(modified_offset, action_type[0], None)  # Clip the first action
-        modified_duration = np.clip(modified_duration, 0, None)  # Second clipping if it's larger than previous offset value
-        modified_pitch_array = np.clip(modified_pitch_array, -1, 127)  # Clip the second action
-        
-        # modified pitch array should be rounded
-        modified_pitch_array = [round(p) for p in modified_pitch_array]
         predicted_state = (modified_offset, modified_duration, modified_pitch_array)
         
         self.current_step +=1
@@ -129,8 +156,8 @@ class TimeSeriesEnvironment:
     
     # Access the row corresponding to the current step
     def _get_state(self):
-        row = data1.iloc[self.current_step]
-        state = (row['offset'], row['duration_ppq'], np.array(ast.literal_eval(row['pitch'])))
+        row = changed_data.iloc[self.current_step]
+        state = (row['offset'], row['duration_ppq'], row['pitch'])
         return state
 
 
@@ -273,7 +300,7 @@ def main():
     # even if they are deleted from the population.
     hof = tools.HallOfFame(1)  # We keep the single best.
 
-    # configues what stats we want to track
+    # configures what stats we want to track
     stats_fit = tools.Statistics(lambda ind: ind.fitness.values)
     stats_size = tools.Statistics(len)
     mstats = tools.MultiStatistics(fitness=stats_fit, size=stats_size)

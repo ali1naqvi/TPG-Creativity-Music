@@ -3,7 +3,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=64
 #SBATCH --mem=10G
-#SBATCH --time=1-16:00  # time (DD-HH:MM)
+#SBATCH --time=1-01:00  # time (DD-HH:MM)
 #SBATCH --error=error_file.txt
 
 seed=$1
