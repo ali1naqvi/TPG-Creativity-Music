@@ -38,17 +38,17 @@ starting_offset = changed_data['offset'].iloc[MAX_STEPS_G] #the starting offset 
 changed_data['offset'] = utils.compute_first_order_difference(changed_data['offset'])
 
 # original values prescaled
-#prescaled_offset_min = changed_data['offset'].min()
-#prescaled_offset_max = changed_data['offset'].max() 
-#prescaled_duration_min = changed_data['duration_ppq'].min()  
-#prescaled_duration_max = changed_data['duration_ppq'].max() 
-#min_pitch = 0 
-#max_pitch = 127
+prescaled_offset_min = changed_data['offset'].min()
+prescaled_offset_max = changed_data['offset'].max() 
+prescaled_duration_min = changed_data['duration_ppq'].min()  
+prescaled_duration_max = changed_data['duration_ppq'].max() 
+min_pitch = 0 
+max_pitch = 127
 
 #scaled
-#changed_data['offset'] = utils.min_max_scale(changed_data['offset'])
-#changed_data['duration_ppq'] = utils.min_max_scale(changed_data['duration_ppq'])
-#changed_data['pitch'] = utils.min_max_scale(changed_data['pitch'])
+changed_data['offset'] = utils.min_max_scale(changed_data['offset'])
+changed_data['duration_ppq'] = utils.min_max_scale(changed_data['duration_ppq'])
+changed_data['pitch'] = utils.min_max_scale(changed_data['pitch'])
 
 #add columns to new data
 new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])   
