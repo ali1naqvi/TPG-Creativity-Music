@@ -19,10 +19,11 @@ import utils
 #changes i made for _25, using MSE function with direction composition (gen4)
 #changes i made for _26, using NCD with envelope and compare it with entire training data (gen3)
 #changes i made for _27, using NCD with envelope and compare it with the 50 values (gen3)
+#changes i made for _28, using mean absolute error
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 200000
+GENERATIONS = 20000
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -132,7 +133,7 @@ class TimeSeriesEnvironment:
             #calculate the normalized compression distance with envelope to the whole song 
             self.total_states = np.array(self.total_states, dtype=np.float64)
             self.total_true_states = np.array(self.total_true_states, dtype=np.float64)
-            reward = -calculate_ncd(self.total_states.ravel(), self.total_true_states.ravel())
+            reward = -calculate_ncd(self.total_states.ravel(), self.total_true_states.ravel()) * 10
             #print("states: ", self.total_states, "reward: ", reward)
             done = True
 
