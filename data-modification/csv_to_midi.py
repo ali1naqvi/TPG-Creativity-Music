@@ -34,7 +34,7 @@ def create_midi_from_csv(note_data, output_file, instrument_program=0):
     pm.write(output_file)
 
 if __name__ == '__main__':
-    df_notes = pd.read_csv('simulation_23.csv')
+    df_notes = pd.read_csv('simulation_28.csv')
 
     # Convert the DataFrame to a list of dictionaries
     note_data = df_notes.to_dict('records')

@@ -20,10 +20,12 @@ import utils
 #changes i made for _26, using NCD with envelope and compare it with entire training data (gen3)
 #changes i made for _27, using NCD with envelope and compare it with the 50 values (gen3)
 #changes i made for _28, using mean absolute error
+#changes i made for _29, combine NCD and MSE (TPG 3)
+#changes i made for _30, corrected NCD (TPG 5)
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 20000
+GENERATIONS = 2018
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
@@ -63,19 +65,27 @@ epsilon = 1e-10#small number near zero
 
 #reward function, using Normalized Compression Distance
 
-def calculate_ncd(sample, target):
+def composite(sample, target, w1= 0.5, w2=0.5):
 
+    #NCD
     sample_bytes = sample.tobytes()
     target_bytes = target.tobytes()
     # Compress individual sequences and concatenated sequence
     c_sample = len(zlib.compress(sample_bytes))
     c_target = len(zlib.compress(sample_bytes))
-
     c_concatenated = len(zlib.compress(sample_bytes + target_bytes))
-    
-    # Calculate NCD
     ncd_value = (c_concatenated - min(c_sample, c_target)) / max(c_sample, c_target)
-    return ncd_value
+
+
+    if len(target) != len(sample):
+        raise ValueError("The length of actual and predicted lists must be the same.")
+    sum_squared_error = 0
+    for a, p in zip(target, sample):
+        sum_squared_error += (a - p) ** 2
+    rmse = (sum_squared_error / len(sample)) ** 0.5
+
+    composite = w1 * rmse + w2 * ncd_value
+    return composite
 
 #environment
 class TimeSeriesEnvironment:
@@ -133,7 +143,7 @@ class TimeSeriesEnvironment:
             #calculate the normalized compression distance with envelope to the whole song 
             self.total_states = np.array(self.total_states, dtype=np.float64)
             self.total_true_states = np.array(self.total_true_states, dtype=np.float64)
-            reward = -calculate_ncd(self.total_states.ravel(), self.total_true_states.ravel()) * 10
+            reward = -composite(self.total_states.ravel(), self.total_true_states.ravel()) * 10
             #print("states: ", self.total_states, "reward: ", reward)
             done = True
 

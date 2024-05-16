@@ -20,10 +20,12 @@ import utils
 #changes i made for _26, using NCD with envelope and compare it with entire training data (gen3)
 #changes i made for _27, using NCD with envelope and compare it with the 50 values (gen3)
 #changes i made for _28, using mean absolute error
+#changes i made for _29, combine NCD and MSE (TPG 3)
+#changes i made for _30, corrected NCD (TPG 5)
 
 #values that can be modified for testing 
 MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 20000
+GENERATIONS = 1320
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5

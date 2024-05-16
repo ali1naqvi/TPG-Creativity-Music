@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-inputname = "simulation_26.csv"
+inputname = "simulation_28.csv"
 midi_file = "test_files/fur_elise.mid"
 
 def data_extraction(midi_data):

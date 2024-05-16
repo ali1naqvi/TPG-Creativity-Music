@@ -1,0 +1,4 @@
+Trainer done: <tpg.trainer.Trainer object at 0x000001ADEEF3ED10>
+Time Taken (Hours): 0.00017069551679823133
+Final Results:
+Min, Max, Avg
