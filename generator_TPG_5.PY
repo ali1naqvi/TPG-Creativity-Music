@@ -21,12 +21,12 @@ import utils
 #changes i made for _27, using NCD with envelope and compare it with the 50 values (gen3)
 #changes i made for _28, using mean absolute error
 #changes i made for _29, combine NCD and MSE (TPG 3)
-#changes i made for _30, corrected NCD (TPG 5)
+#changes i made for _30, changed population size for team from 150 to 360, probability for atomic action from 1.0 to 0.95. max steps is 800->950
 
 #values that can be modified for testing 
-MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 2018
-EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
+MAX_STEPS_G = 950 #max values we want for training starts with 1 (so subtract one)
+GENERATIONS = 1000
+EXTRA_TIME_STEPS  = 120 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 DATA_DIVISION = 0.5
 EP_LENGTH = 100
@@ -332,7 +332,7 @@ if __name__ == '__main__':
         trainer.configFunctions()
         print("LOADED TRAINER")
     else:
-        trainer = Trainer(actions=[3], teamPopSize=150, initMaxTeamSize=10, initMaxProgSize=100, pActAtom=1.0, memType="default", operationSet="def")
+        trainer = Trainer(actions=[3], teamPopSize=360, initMaxTeamSize=10, initMaxProgSize=100, pActAtom=0.95, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():

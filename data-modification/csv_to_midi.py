@@ -1,43 +1,36 @@
 import pandas as pd
 import pretty_midi
-import ast  # Import Abstract Syntax Trees to safely parse strings into lists
 
 def create_midi_from_csv(note_data, output_file, instrument_program=0):
-    # Create a PrettyMIDI object
+    # Create PrettyMIDI object
     pm = pretty_midi.PrettyMIDI()
-    # Create an Instrument instance with the specified program
+    # Create Instrument instance
     instrument = pretty_midi.Instrument(program=instrument_program)
 
-    # Create notes from the data
+    # Create notes from data
     for note_entry in note_data:
         # Retrieve note information
-        start_time = float(note_entry['offset'])  # Now 'offset' is the absolute start time
+        start_time = float(note_entry['offset'])  # offset: absolute start time
         pitch = int(note_entry['pitch'])  # Safely parse the string representation of a list
         duration_ppq = float(note_entry['duration_ppq'])
 
-        # Iterate over pitches and create a Note object for each valid pitch
-        if pitch != -1:  # Ignore -1, as it represents the absence of a note
+        
+        if pitch != -1: # -1 represents absence of note. Will not occur, however kept for multivariable purposes
             note = pretty_midi.Note(
-                velocity=100,  # Default velocity
+                velocity=100, #velocity is ignored for this program
                 pitch=pitch,
                 start=start_time,
-                end=start_time + duration_ppq  # Note's end time is its start time plus its duration
+                end=start_time + duration_ppq  # Note's end time: start time plus its duration
             )
 
                 # Add the note to the instrument
             instrument.notes.append(note)
 
-    # Add the instrument to the PrettyMIDI object
+    # Add the instrument to PrettyMIDI object
     pm.instruments.append(instrument)
-
-    # Write out the MIDI data to the output file
-    pm.write(output_file)
+    pm.write(output_file) # Write to output file
 
 if __name__ == '__main__':
-    df_notes = pd.read_csv('simulation_28.csv')
-
-    # Convert the DataFrame to a list of dictionaries
+    df_notes = pd.read_csv('simulation_29.csv')
     note_data = df_notes.to_dict('records')
-
-    # Now you can pass this list to the function
     create_midi_from_csv(note_data, 'output_predictions_testing.mid')

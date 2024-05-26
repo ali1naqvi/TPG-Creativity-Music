@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from tpg.trainer import Trainer
+from tpg.trainer import Trainer, loadTrainer
 from tpg.agent import Agent
 import multiprocessing as mp
 import time
@@ -18,19 +18,21 @@ import utils
 #changes i made for _24, using new fitness function (theil)
 #changes i made for _25, using MSE function with direction composition (gen4)
 #changes i made for _26, using NCD with envelope and compare it with entire training data (gen3)
-#changes i made for _27, using NCD with envelope and compare it with the 50 values (gen3)
+#changes i made for _27, using NCD with envelope and compare it with the 50 values (gen3) (it wasn't good)
 #changes i made for _28, using mean absolute error
 #changes i made for _29, combine NCD and MSE (TPG 3)
-#changes i made for _30, corrected NCD (TPG 5)
+#changes i made for _30, changed population size for team from 150 to 360, probability for atomic action from 1.0 to 0.95. max steps is 800->950. training =ncd, validation and testing mse
+#changes i made for _31, swap NCD and MSE
 
 #values that can be modified for testing 
-MAX_STEPS_G = 800 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 1320
+MAX_STEPS_G = 951 #max values we want for training starts with 1 (so subtract one)
+GENERATIONS = 52900
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
-DATA_DIVISION = 0.5
-EP_LENGTH = 100
 
+PRIME_STEPS = 50
+TRAINING_STEPS = 50
+VALIDATION_STEPS = TESTING_STEPS = 100
 
 original_data = pd.read_csv("input.csv")
 changed_data = pd.read_csv("input.csv")
@@ -55,37 +57,45 @@ changed_data['pitch'] = utils.min_max_scale(changed_data['pitch'])
 
 #add columns to new data
 new_data = pd.DataFrame(changed_data, columns=['offset', 'duration_ppq', 'pitch'])   
+
+training_data = pd.DataFrame(changed_data.iloc[:MAX_STEPS_G], columns=['offset', 'duration_ppq', 'pitch'])
+
+# full_song_bytes = training_data.to_numpy().ravel().tobytes()
+# c_full_song = len(zlib.compress(full_song_bytes))
+
 epsilon = 1e-10#small number near zero
- 
-def mean_absolute_error(actual, predicted):
-    if len(actual) != len(predicted):
-        raise ValueError("The length of actual and predicted lists must be the same.")
-    sum_absolute_error = 0
-    for a, p in zip(actual, predicted):
-        sum_absolute_error += abs(a - p)
-    mae = sum_absolute_error / len(actual)
-    return mae
-'''
-def composite_score(predictions, actuals, w1=0.5, w2=0.5):
-    rmse = mean_squared_error(actuals, predictions)
-    # Calculate Hit Rate
-    direction_pred = np.sign(np.diff(predictions))
-    direction_actual = np.sign(np.diff(actuals))
-    hit_rate = np.mean(direction_pred == direction_actual)
+
+#reward function, using Normalized Compression Distance
+
+def ncd(sample, target):
+    # Normalize the sample
+    sample = np.clip(sample, 0, 1)
     
-    # Compute Composite Score
-    composite_score = w1 * (1 - rmse) + w2 * hit_rate
-    return composite_score
+    # Convert sample and target to bytes
+    sample_bytes = sample.tobytes()
+    target_bytes = target.tobytes()
+    
+    # Compress individual sequences and concatenated sequence
+    #c_sample = len(compress_ppmz(sample_bytes))
+    #c_target = len(compress_ppmz(target_bytes))
+    c_sample = len(zlib.compress(sample_bytes))
+    c_target = len(zlib.compress(target_bytes))
+    
+    #c_concatenated = len(compress_ppmz(sample_bytes + target_bytes))
+    c_concatenated = len(zlib.compress(sample_bytes + target_bytes))
+    
+    # Calculate NCD value
+    ncd_value = (c_concatenated - min(c_sample, c_target)) / max(c_sample, c_target)
+    
+    return ncd_value + 100
 
-
-def theil_u_statistic(actual, predicted, actual_next):
-    if len(actual) != len(predicted):
-        raise ValueError("The length of actual and predicted lists must be the same.")
-    numerator = sum((a - p) ** 2 for a, p in zip(actual, predicted))
-    denominator = sum((a - n) ** 2 for a, n in zip(actual, actual_next))
-    denominator = denominator if denominator != 0 else epsilon
-    return (numerator / denominator) ** 0.5
-'''
+def mse(sample, target):
+    sample = np.clip(sample, 0, 1)
+    sum_squared_error = 0
+    for a, p in zip(target, sample):
+        sum_squared_error += (a - p) ** 2
+    mse = (sum_squared_error / len(sample))
+    return mse
 
 #environment
 class TimeSeriesEnvironment:
@@ -93,19 +103,18 @@ class TimeSeriesEnvironment:
 
         self.max_generated_steps = max_steps
         self.current_step = current_step_g
-
+        self.total_states = []
+        self.total_true_states = []
         #starts off at 0, getting the 0th row in the dataset
         self.last_state = self._get_state()
 
     def reset(self, episodenum, window_size):
         # Resets to the starting step we want
-        
+        self.total_states = []
+        self.total_true_states = []
         self.current_step = episodenum * window_size 
 
-        #0 to 20, subtract 1  
-        # stuff print("current step: ", self.current_step)
         self.max_generated_steps = (self.current_step + window_size)
-        # stuff print("max generated step: ", self.max_generated_steps)
         self.last_state = self._get_state() 
 
         return self.last_state
@@ -114,13 +123,13 @@ class TimeSeriesEnvironment:
 #get predicted step and compare with the actual value
     
 #first step: 0, last step:  19. len: 20s
-    def step(self, action_type, forecasting=False):
+    def step(self, action_type, reward_func):
 
         #reset values 
         done = False
         reward = 0
             
-        action_id, action_values = action_type
+        _, action_values = action_type
         modified_offset, modified_duration, modified_pitch_array = action_values
 
         # Clip the values to ensure they are within the valid range
@@ -133,26 +142,27 @@ class TimeSeriesEnvironment:
         #check if we reached the end, calculate the reward 
                 #0 - 20           #20
         if self.current_step+1 <= self.max_generated_steps:
-            actual_row = changed_data.iloc[self.current_step+1]
-            #next_row = changed_data.iloc[self.current_step+2]
-            #next_real_state = (next_row['offset'], next_row['duration_ppq'], next_row['pitch'])
-            self.real_state = (actual_row['offset'], actual_row['duration_ppq'], actual_row['pitch'])
-            reward = -mean_absolute_error(np.hstack(self.real_state), np.hstack(predicted_state)) * 10
-            #reward = -theil_u_statistic(np.hstack(self.real_state), np.hstack(predicted_state), np.hstack(next_real_state))
+            #max steps arent reached so we keep adding each state to a string
+            self.total_true_states.extend(self._get_state()) 
+            self.total_states.extend(predicted_state)  # Append the new state as a tuple
         else:
-            #end of dataset
+            #end of window for episode
+            #calculate the normalized compression distance with envelope to the whole song 
+            self.total_states = np.array(self.total_states, dtype=np.float64)
+            self.total_true_states = np.array(self.total_true_states, dtype=np.float64)
+            if reward_func == 'ncd':
+                reward = -ncd(self.total_states.ravel(), self.total_true_states.ravel()) * 100
+            elif reward_func == 'mse':
+                reward = -mse(self.total_states.ravel(), self.total_true_states.ravel())
+            #print("states: ", self.total_states, "reward: ", reward)
             done = True
 
-        if forecasting == True:
-            self.last_state = predicted_state
-        else:
-            self.last_state = self._get_state()
         self.current_step +=1
         return self.last_state, predicted_state, reward, done
 
     def step_simulation(self, action_type):
         # stuff print(action_type)
-        action_id, action_values = action_type
+        _, action_values = action_type
         modified_offset, modified_duration, modified_pitch_array = action_values
 
         # Clip the values to ensure they are within the valid range
@@ -179,45 +189,38 @@ def runAgent(args):
     agent.configFunctionsSelf()
     env = TimeSeriesEnvironment()
     scoreTotal = 0
-    episode_length = EP_LENGTH
-    numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 50 = 10
+    episode_length = PRIME_STEPS + TRAINING_STEPS
+    numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 100 = 5
     reward = 0
 
-    priming_steps = round(episode_length * DATA_DIVISION) # 100 * 0.5 = 50 priming steps
     for ep in range(numEpisodes):
         isDone = False
-        #memory array is returned as this is the action state
-        action_state = env.reset(ep, episode_length) #resets at next 25 window (based on episode)
-        
-        #starts on the second rather than the first so the first order difference be computed.
-        #env.current_step += 1
+        action_state = env.reset(ep, episode_length) #resets at next 100 window (based on episode)
         
         predicted_state = action_state  #recursion will only occur for an episode with the correct one starting
         scoreEp = 0
         while True:
-            # change the action_state returning. Either use prediction (recursion) or direct approach 
             #prime first half of the episode
-            # stuff  print("modifying: ", ((ep * episode_length) + priming_steps), "with episode: ", ep)
-            if ((ep * episode_length) + priming_steps) > env.current_step:
+            #if current step is less than the second half (0-49)
+            if  env.current_step < ((ep * episode_length) + PRIME_STEPS):
                 action_value = (agent.act(np.hstack(action_state)))
                 env.current_step += 1 #increase step in environment
                 action_state = env._get_state()
                 predicted_state = action_state #updating predicted
-            #second half of episode
             else:
-                #after direct steps, it will take the predicted value produced
                 action_value = (agent.act(np.hstack(predicted_state)))
-                # stuff  print("step now: ", env.current_step, "with step: ", predicted_state)
-                action_state, predicted_state, reward, isDone = env.step(action_value, forecasting=True) #now fix step 
+                #stuff  print("step now: ", env.current_step, "with step: ", predicted_state)
+                action_state, predicted_state, reward, isDone = env.step(action_value, reward_func='mse') #now fix step 
+                scoreEp += reward
                 
             # Apply clipping to continuous actions : action_value 
             #action_state gives you the next step
-            scoreEp += reward
             #env.set_action_mem(action_state) #add state to memory
             if isDone:
                 # stuff print("we finished")
                 break
         scoreTotal += scoreEp
+        #print("ScoreTotal:", scoreTotal)
 
     scoreTotal /= numEpisodes
     agent.reward(scoreTotal, task='main')
@@ -233,13 +236,11 @@ def RunValidationAgents(args):
 
     env = TimeSeriesEnvironment()
     scoreTotal = 0
-    episode_length = EP_LENGTH * 2 #100 
-    numEpisodes = int(MAX_STEPS_G / episode_length) # 500 / 100 = 5
+    episode_length = PRIME_STEPS + VALIDATION_STEPS #50 + 100 = 150
+    numEpisodes = int((MAX_STEPS_G - PRIME_STEPS) / episode_length) # 750 / 150 = 5
     reward = 0
 
-    priming_steps = round(episode_length * DATA_DIVISION) # 100 * 0.5 = 50 PRIMING
     for ep in range(numEpisodes):
-        counter_direct = 0
         #memory array is returned as this is the action state
         action_state = env.reset(ep, episode_length) #resets at next 25 window (based on episode)
         #predicted_state = action_state  #recursion will only occur for an episode with the correct one starting
@@ -250,25 +251,16 @@ def RunValidationAgents(args):
             # change the action_state returning. Either use prediction (recursion) or direct approach 
             #prime first half of the episode
             #intuition: multiplication of episode and length gives us the starting step + priming steps gives us where the forecasting should start
-            if ((ep * episode_length) + priming_steps) > env.current_step:
+            if ((ep * episode_length) + PRIME_STEPS) > env.current_step:
                 action_value = (agent.act(np.hstack(action_state)))
                 env.current_step +=1 #increase step in environment
                 action_state = env._get_state()
             #second half of episode
             else:
-                if counter_direct < (priming_steps / 2):
-                    action_value = (agent.act(np.hstack(action_state)))
-                    env.current_step +=1 #increase step in environment
-                    action_state = env._get_state()
-                    predicted_state = action_state
-                    counter_direct +=1
-                else:
-                    action_value = (agent.act(np.hstack(predicted_state)))
-                    action_state, predicted_state, reward, isDone = env.step(action_value, forecasting=True) #now fix step 
-                
-            # Apply clipping to continuous actions : action_value 
-            #action_state gives you the next step
-            scoreEp += reward
+                predicted_state = (agent.act(action_state))
+                action_state, predicted_state, reward, isDone = env.step(predicted_state, reward_func='ncd') #now fix step
+                scoreEp += reward
+            
             #env.set_action_mem(action_state) #add state to memory
             if isDone:
                 break
@@ -276,6 +268,50 @@ def RunValidationAgents(args):
 
     scoreTotal /= numEpisodes
     agent.reward(scoreTotal, task='validation')
+
+    validscoreList.append((agent.team.id, agent.team.outcomes))
+    return agent, validscoreList
+
+def RunTestingAgents(args):
+    agent, validscoreList = args
+
+    #funcion for handling parallelism
+    agent.configFunctionsSelf()
+
+    env = TimeSeriesEnvironment(current_step_g=49)
+    scoreTotal = 0
+    episode_length = PRIME_STEPS + TESTING_STEPS #50 + 100 = 150
+    numEpisodes = int((MAX_STEPS_G - PRIME_STEPS) / episode_length) # 750 / 150 = 5
+    reward = 0
+
+    for ep in range(numEpisodes):
+        #memory array is returned as this is the action state
+        action_state = env.reset(ep, episode_length) #resets at next 25 window (based on episode)
+        #predicted_state = action_state  #recursion will only occur for an episode with the correct one starting
+        scoreEp = 0
+        isDone = False
+        while True:
+            #action state is current value, memory based on this will return from get_action_mem (includes it)
+            # change the action_state returning. Either use prediction (recursion) or direct approach 
+            #prime first half of the episode
+            #intuition: multiplication of episode and length gives us the starting step + priming steps gives us where the forecasting should start
+            if ((ep * episode_length) + PRIME_STEPS) > env.current_step:
+                action_value = (agent.act(np.hstack(action_state)))
+                env.current_step +=1 #increase step in environment
+                action_state = env._get_state()
+            #second half of episode
+            else:
+                predicted_state = (agent.act(action_state))
+                action_state, predicted_state, reward, isDone = env.step(predicted_state, reward_func='ncd') #now fix step
+                scoreEp += reward
+            
+            #env.set_action_mem(action_state) #add state to memory
+            if isDone:
+                break
+        scoreTotal += scoreEp
+
+    scoreTotal /= numEpisodes
+    agent.reward(scoreTotal, task='testing')
 
     validscoreList.append((agent.team.id, agent.team.outcomes))
     return agent, validscoreList
@@ -333,11 +369,10 @@ if __name__ == '__main__':
     gen_checkpoint_path = Path("gen_savepoint_30.txt")
 
     if trainer_checkpoint_path.exists():
-        trainer = pickle.load(open(trainer_checkpoint_path, 'rb'))
-        trainer.configFunctions()
+        trainer = loadTrainer(trainer_checkpoint_path)
         print("LOADED TRAINER")
     else:
-        trainer = Trainer(actions=[3], teamPopSize=150, initMaxTeamSize=10, initMaxProgSize=100, pActAtom=1.0, memType="default", operationSet="def")
+        trainer = Trainer(actions=[3], teamPopSize=360, initMaxTeamSize=10, initMaxProgSize=100, pActAtom=0.95, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
@@ -372,7 +407,8 @@ if __name__ == '__main__':
             trainer.evolve(tasks=['main'])
             
             validation_champion_path = Path("validation_champion_30")
-            if gen % 10 == 0 and gen != 0:  # Validation phase every 10 generations
+            testing_champion_path = Path("testing_champion_30")
+            if gen % 10 == 0 and gen != 0 and gen % 100 != 0:  # Validation phase every 10 generations but not on 100th
                 prevbestscore = float('-inf') #starting value of negative infinity
                 looper = True
                 start_validation_time = time.time()
@@ -390,7 +426,6 @@ if __name__ == '__main__':
                     #save and retrieve best validation agent (since the best of gen != best)
                     if current_best_validation.team.outcomes['validation'] >= prevbestscore:
                         prevbestscore = current_best_validation.team.outcomes['validation']
-                        
                         validationChamp = current_best_validation
                         validationChamp.saveToFile("validation_champion_30")
                     else: 
@@ -412,6 +447,46 @@ if __name__ == '__main__':
 
                     if looper:
                         trainer.evolve(tasks=['validation'])
+            
+            if gen % 100 == 0 and gen != 0:  # testing phase every 10 generations
+                prevbestscore = float('-inf') #starting value of negative infinity
+                looper = True
+                start_testing_time = time.time()
+                print("Values")
+                while looper:
+                    TestingScores = man.list()
+                    agents = trainer.getAgents()
+                    
+                    pool.map(RunTestingAgents, [(agent, TestingScores) for agent in agents])
+                    teams1 = trainer.applyScores(TestingScores)
+                    
+                    #the current best of this evolution
+                    current_best_testing = trainer.getEliteAgent(task='testing')
+                    print("testing Generation Score: ", current_best_testing.team.outcomes['testing'])
+                    #save and retrieve best testing agent (since the best of gen != best)
+                    if current_best_testing.team.outcomes['testing'] >= prevbestscore:
+                        prevbestscore = current_best_testing.team.outcomes['testing']
+                        testingChamp = current_best_testing
+                        testingChamp.saveToFile("testing_champion_30")
+                    else: 
+                        #error check just in case file does not exist 
+                        if testing_champion_path.exists():
+                            testingChamp = pickle.load(open(testing_champion_path, 'rb'))
+                            testingChamp.configFunctionsSelf()
+                        else: 
+                            testingChamp = trainer.getEliteAgent(task='testing')
+                        print("testingchampion: ", testingChamp.team.outcomes)
+                        print(f"testing champ with the best test score with {testingChamp.team.outcomes['testing']} on test data.")
+                        with open("final_testing_scores_30.txt", 'w') as f:
+                            f.write(str(testingChamp.team.outcomes['testing']))
+                        looper= False
+                            
+                    if time.time() - start_testing_time > (3600*4):  # Check if 4 hour has passed
+                        print("Time limit for finding a better testing champ exceeded.")
+                        looper= False
+
+                    if looper:
+                        trainer.evolve(tasks=['testing'])
                     
             scoreStats = trainer.fitnessStats
             allScores.append((scoreStats['min'], scoreStats['max'], scoreStats['average']))
@@ -429,7 +504,7 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("best_agent_30", 'rb'))
+        champ = pickle.load(open("testing_champion_30", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)
