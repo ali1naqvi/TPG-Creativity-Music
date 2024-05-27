@@ -14,3 +14,7 @@ Trainer done: <tpg.trainer.Trainer object at 0x1500ce4e3d00>
 Time Taken (Hours): 0.00020928521951039632
 Final Results:
 Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x150d1fcc7d00>
+Time Taken (Hours): 0.0001403607924779256
+Final Results:
+Min, Max, Avg

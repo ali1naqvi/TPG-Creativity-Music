@@ -1,1 +1,64 @@
-slurmstepd: error: *** JOB 29087987 ON nc30250 CANCELLED AT 2024-05-18T04:33:47 DUE TO TIME LIMIT ***
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.10.13/lib/python3.10/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.10.13/lib/python3.10/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/lustre07/scratch/alinaqvi/fur_elise_final/generator_TPG_4.PY", line 206, in runAgent
+    action_value = (agent.act(np.hstack(action_state)))
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_agent.py", line 35, in act_def
+    result = self.team.act(state, visited=visited, actVars=self.actVars)
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_team.py", line 88, in act_def
+    return top_learner.getAction(state, visited=visited, actVars=actVars, path_trace=path_trace)
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_learner.py", line 95, in getAction_def
+    return self.actionObj.getAction(state, visited, actVars=actVars, path_trace=path_trace)
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_action_object.py", line 119, in getAction_real
+    return self.teamAction.act(state, visited, actVars=actVars, path_trace=path_trace)
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_team.py", line 58, in act_def
+    top_learner = max(valid_learners,
+ValueError: max() arg is an empty sequence
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/lustre07/scratch/alinaqvi/fur_elise_final/generator_TPG_4.PY", line 400, in <module>
+    pool.map(runAgent, [(agent, scoreList) for agent in agents])
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.10.13/lib/python3.10/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.10.13/lib/python3.10/multiprocessing/pool.py", line 774, in get
+    raise self._value
+ValueError: max() arg is an empty sequence
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.10.13/lib/python3.10/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.10.13/lib/python3.10/multiprocessing/pool.py", line 48, in mapstar
+    return list(map(*args))
+  File "/lustre07/scratch/alinaqvi/fur_elise_final/generator_TPG_3.PY", line 206, in runAgent
+    action_value = (agent.act(np.hstack(action_state)))
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_agent.py", line 35, in act_def
+    result = self.team.act(state, visited=visited, actVars=self.actVars)
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_team.py", line 88, in act_def
+    return top_learner.getAction(state, visited=visited, actVars=actVars, path_trace=path_trace)
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_learner.py", line 95, in getAction_def
+    return self.actionObj.getAction(state, visited, actVars=actVars, path_trace=path_trace)
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_action_object.py", line 119, in getAction_real
+    return self.teamAction.act(state, visited, actVars=actVars, path_trace=path_trace)
+  File "/home/alinaqvi/.local/lib/python3.10/site-packages/tpg/configuration/conf_team.py", line 58, in act_def
+    top_learner = max(valid_learners,
+ValueError: max() arg is an empty sequence
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/lustre07/scratch/alinaqvi/fur_elise_final/generator_TPG_3.PY", line 400, in <module>
+    pool.map(runAgent, [(agent, scoreList) for agent in agents])
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.10.13/lib/python3.10/multiprocessing/pool.py", line 367, in map
+    return self._map_async(func, iterable, mapstar, chunksize).get()
+  File "/cvmfs/soft.computecanada.ca/easybuild/software/2023/x86-64-v3/Compiler/gcccore/python/3.10.13/lib/python3.10/multiprocessing/pool.py", line 774, in get
+    raise self._value
+ValueError: max() arg is an empty sequence
