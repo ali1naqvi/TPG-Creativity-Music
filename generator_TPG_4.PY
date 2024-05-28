@@ -26,7 +26,7 @@ import utils
 
 #values that can be modified for testing 
 MAX_STEPS_G = 951 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 52900
+GENERATIONS = 100000
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 
@@ -322,6 +322,7 @@ def RunBestAgent(args):
 
     simulation_results = []
 
+    env = TimeSeriesEnvironment()
     # stuff print("Priming")
     # 0 to 799 (inclusive)
     for x in range(MAX_STEPS_G):
@@ -329,9 +330,9 @@ def RunBestAgent(args):
         last_state = (row['offset'], row['duration_ppq'], row['pitch'])
         action_value = (agent.act(np.hstack(last_state)))
         print("step "+str(x)+" for state: ", np.hstack(last_state))
-
+        env.current_step +=1
     #start at 800
-    env = TimeSeriesEnvironment()
+    print("env.current_step", env.current_step)
     print("what the last state is:", env.last_state)
     print("Priming last state (offset) to start from: ", utils.invert_min_max_scale(last_state[2], min_pitch, max_pitch))
     print("Priming last state (duration) to start from: ", utils.invert_min_max_scale(last_state[1], prescaled_duration_min, prescaled_duration_max))
@@ -372,7 +373,7 @@ if __name__ == '__main__':
         trainer = loadTrainer(trainer_checkpoint_path)
         print("LOADED TRAINER")
     else:
-        trainer = Trainer(actions=[3], teamPopSize=360, initMaxTeamSize=10, initMaxProgSize=100, pActAtom=0.95, memType="default", operationSet="def")
+        trainer = Trainer(actions=[3], teamPopSize=360, initMaxTeamSize=10, initMaxProgSize=100, pActAtom=1.0, memType="default", operationSet="def")
         gen_start = 0
     
     if gen_checkpoint_path.exists():
