@@ -1,3 +1,5 @@
+import numpy as np
+
 def min_max_scale(series, feature_range=(0, 1)):
     #min range + scale *(x - x_min) / x_max - x_min
     min_val = series.min()
@@ -12,3 +14,6 @@ def invert_min_max_scale(scaled_val, original_min, original_max, feature_range=(
 
 def compute_first_order_difference(series):
     return series.diff().fillna(0)  # Using fillna(0) for the first element which doesn't have a previous value
+
+def sigmoid(x):
+    return 1 / (1 + np.exp(-x))

@@ -135,9 +135,9 @@ class TimeSeriesEnvironment:
         modified_offset, modified_duration, modified_pitch_array = action_values
 
         # Clip the values to ensure they are within the valid range
-        modified_offset = np.clip(modified_offset, 0, 1)
-        modified_duration = np.clip(modified_duration, 0, 1)
-        modified_pitch_array = np.clip(modified_pitch_array, 0, 1)  # Assuming modified_pitch_array can be directly used with np.clip
+        modified_offset = utils.sigmoid(modified_offset)
+        modified_duration = utils.sigmoid(modified_duration)
+        modified_pitch_array = utils.sigmoid(modified_pitch_array)  # Assuming modified_pitch_array can be directly used with np.clip
         
         predicted_state = (modified_offset, modified_duration, modified_pitch_array)
 
@@ -168,9 +168,9 @@ class TimeSeriesEnvironment:
         modified_offset, modified_duration, modified_pitch_array = action_values
 
         # Clip the values to ensure they are within the valid range
-        modified_offset = np.clip(modified_offset, 0, 1)
-        modified_duration = np.clip(modified_duration, 0, 1)
-        modified_pitch_array = np.clip(modified_pitch_array, 0, 1)  # Assuming modified_pitch_array can be directly used with np.clip
+        modified_offset = utils.sigmoid(modified_offset)
+        modified_duration = utils.sigmoid(modified_duration)
+        modified_pitch_array = utils.sigmoid(modified_pitch_array)  # Assuming modified_pitch_array can be directly used with np.clip
         
         predicted_state = (modified_offset, modified_duration, modified_pitch_array)
         
