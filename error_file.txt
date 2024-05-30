@@ -1,2 +1,940 @@
-slurmstepd: error: *** JOB 29685516 ON nc20253 CANCELLED AT 2024-05-28T15:55:12 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 29685517 ON nc20552 CANCELLED AT 2024-05-28T15:55:12 DUE TO TIME LIMIT ***
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+/lustre07/scratch/alinaqvi/fur_elise_final/utils.py:19: RuntimeWarning: overflow encountered in exp
+  return 1 / (1 + np.exp(-x))
+slurmstepd: error: *** JOB 29744810 ON nc30133 CANCELLED AT 2024-05-29T20:20:51 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 29744809 ON nc20607 CANCELLED AT 2024-05-29T20:20:51 DUE TO TIME LIMIT ***
