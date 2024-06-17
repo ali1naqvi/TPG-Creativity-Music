@@ -4964,3 +4964,51 @@ Min, Max, Avg
 (-26.571602734674894, -6.274003245691761, -9.364174207067979)
 (-28.4308975873377, -6.2674140666877545, -9.282198561975038)
 (-34.02712190829351, -6.277166174557745, -9.671610840910018)
+Trainer done: <tpg.trainer.Trainer object at 0x000002CC65423710>
+Time Taken (Hours): 0.00019030630588531494
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000015923DA3090>
+Time Taken (Hours): 0.0001883983612060547
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001C1683D3390>
+Time Taken (Hours): 0.00018749197324117024
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001B69A6C2810>
+Time Taken (Hours): 0.00017682055632273357
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001F41E333590>
+Time Taken (Hours): 0.00017824788888295493
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000019BF5FE2810>
+Time Taken (Hours): 0.00018112884627448188
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001E8CD823750>
+Time Taken (Hours): 0.00017633007632361517
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001EAC9443890>
+Time Taken (Hours): 0.00018792569637298583
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000024B71442810>
+Time Taken (Hours): 0.00018392324447631835
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000018435EA2E50>
+Time Taken (Hours): 0.00018231213092803955
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001BA068D3810>
+Time Taken (Hours): 0.00018136355612013074
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x00000192972C3750>
+Time Taken (Hours): 0.00019837379455566405
+Final Results:
+Min, Max, Avg

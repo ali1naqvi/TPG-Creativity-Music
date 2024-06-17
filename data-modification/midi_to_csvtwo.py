@@ -40,7 +40,7 @@ def plot_pitches(input_csv):
     ax = plt.gca()
     
     # Now that 'pitch' contains numeric data, we can plot it
-    df.reset_index().plot(kind='line', y='offset', ax=ax, legend=False, linewidth=0.8)
+    df.reset_index().plot(kind='line', y='duration_ppq', ax=ax, legend=False, linewidth=0.8)
 
     # Set title and labels with increased font size
     plt.title("Pitch Duration Representation of 'Fur Elise'", fontsize=16)

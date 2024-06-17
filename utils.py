@@ -1,4 +1,5 @@
 import numpy as np
+import zlib
 
 def min_max_scale(series, feature_range=(0, 1)):
     #min range + scale *(x - x_min) / x_max - x_min
@@ -16,4 +17,48 @@ def compute_first_order_difference(series):
     return series.diff().fillna(0)  # Using fillna(0) for the first element which doesn't have a previous value
 
 def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
+    if x >= 0:  
+        return 1 / (1 + np.exp(-x))
+    elif x < 0:
+        return np.exp(x) / (1 + np.exp(x))
+
+
+#FITNESS FUNCTIONS
+def ncd(sample, target):
+    # Normalize the sample
+    sample = np.clip(sample, 0, 1)
+    
+    # Convert sample and target to bytes
+    sample_bytes = sample.tobytes()
+    target_bytes = target.tobytes()
+    
+    # Compress individual sequences and concatenated sequence
+    #c_sample = len(compress_ppmz(sample_bytes))
+    #c_target = len(compress_ppmz(target_bytes))
+    c_sample = len(zlib.compress(sample_bytes))
+    c_target = len(zlib.compress(target_bytes))
+    
+    #c_concatenated = len(compress_ppmz(sample_bytes + target_bytes))
+    c_concatenated = len(zlib.compress(sample_bytes + target_bytes))
+    
+    # Calculate NCD value
+    ncd_value = (c_concatenated - min(c_sample, c_target)) / max(c_sample, c_target)
+    
+    return ncd_value + 100
+
+def mse(sample, target):
+    sample = np.clip(sample, 0, 1)
+    sum_squared_error = 0
+    for a, p in zip(target, sample):
+        sum_squared_error += (a - p) ** 2
+    mse = (sum_squared_error / len(sample))
+    return mse
+
+def theil_u_statistic(actual, predicted, actual_next):
+    if len(actual) != len(predicted):
+        raise ValueError("The length of actual and predicted lists must be the same.")
+    numerator = denominator = 0
+    for a, p, p_a in zip(actual, predicted, actual_next):
+        numerator += (a - p) ** 2
+        denominator += (a - p_a) ** 2
+    return numerator/denominator

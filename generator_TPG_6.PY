@@ -278,7 +278,7 @@ def RunTestingAgents(args):
             #second half of episode
             else:
                 predicted_state = (agent.act(action_state))
-                action_state, predicted_state, reward, isDone = env.step(predicted_state, reward_func='mse') #now fix step
+                action_state, predicted_state, reward, isDone = env.step(predicted_state, reward_func='ncd') #now fix step
                 scoreEp += reward
             
             #env.set_action_mem(action_state) #add state to memory
@@ -338,12 +338,12 @@ def RunBestAgent(args):
 
     simulated_data = pd.concat([original_data[:MAX_STEPS_G+1], simulated_data], ignore_index=True)
     simulated_data['pitch'] = simulated_data['pitch'].round()
-    simulated_data.to_csv('Simulation_35.csv', index=False)
+    simulated_data.to_csv('Simulation_36.csv', index=False)
 
 if __name__ == '__main__':
     tStart = time.time()
-    trainer_checkpoint_path = Path("trainer_savepoint_35.pkl")
-    gen_checkpoint_path = Path("gen_savepoint_35.txt")
+    trainer_checkpoint_path = Path("trainer_savepoint_36.pkl")
+    gen_checkpoint_path = Path("gen_savepoint_36.txt")
 
     if trainer_checkpoint_path.exists():
         trainer = loadTrainer(trainer_checkpoint_path)
@@ -360,7 +360,7 @@ if __name__ == '__main__':
         gen_start = 0
 
     # Open a text file to write output
-    with open('results_35.txt', 'a' if gen_start > 0 else 'w') as file:
+    with open('results_36.txt', 'a' if gen_start > 0 else 'w') as file:
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
@@ -379,12 +379,12 @@ if __name__ == '__main__':
             teams = trainer.applyScores(scoreList)  
             
             champ = trainer.getEliteAgent(task='main')
-            champ.saveToFile("best_agent_35")
+            champ.saveToFile("best_agent_36")
 
             trainer.evolve(tasks=['main'])
             
-            validation_champion_path = Path("validation_champion_35")
-            testing_champion_path = Path("testing_champion_35")
+            validation_champion_path = Path("validation_champion_36")
+            testing_champion_path = Path("testing_champion_36")
             
             if validation_champion_path.exists():
                 with open(validation_champion_path, 'rb') as f:
@@ -425,7 +425,7 @@ if __name__ == '__main__':
                     print("Best agent of all time score: ", best_validation_score)
                     print(f"Validation champ with the best test score with {best_validation_score} on test data.")
         
-                    with open("final_validation_scores_35.txt", 'w') as f:
+                    with open("final_validation_scores_36.txt", 'w') as f:
                         f.write(str(best_validation_score))
                          
                             
@@ -475,7 +475,7 @@ if __name__ == '__main__':
                     print("Best agent of all time score: ", best_testing_score)
                     print(f"Testing champ with the best test score with {best_testing_score} on test data.")
         
-                    with open("final_testing_scores_35.txt", 'w') as f:
+                    with open("final_testing_scores_36.txt", 'w') as f:
                         f.write(str(best_testing_score))
                          
                             
@@ -491,8 +491,8 @@ if __name__ == '__main__':
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
             file.write(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}\n")
 
-            trainer.saveToFile("trainer_savepoint_35.pkl")
-            with open("gen_savepoint_35.txt", 'w') as gen_file:
+            trainer.saveToFile("trainer_savepoint_36.pkl")
+            with open("gen_savepoint_36.txt", 'w') as gen_file:
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
@@ -502,7 +502,7 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("validation_champion_35", 'rb'))
+        champ = pickle.load(open("validation_champion_36", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)
