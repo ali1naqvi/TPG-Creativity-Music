@@ -43,7 +43,7 @@ import utils
 
 #values that can be modified for testing 
 MAX_STEPS_G = 960 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 125
+GENERATIONS = 125999
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 
