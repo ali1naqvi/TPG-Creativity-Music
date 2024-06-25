@@ -12,7 +12,7 @@ def mse(sample, target):
 
 
 # Load the four CSV files
-csv_files = ["simulation_var.csv", "input.csv"]
+csv_files = ["simulation_48.csv", "input.csv"]
 df = [pd.read_csv(file) for file in csv_files]
 
 # Trim the dataframes to the specified range
@@ -31,8 +31,8 @@ for i, mse1 in enumerate(mse_values):
 # Plot the 'pitch' column from each dataframe
 plt.figure(figsize=(10, 6))
 
-plt.plot(df[0]['pitch'], label='Theil')
-plt.plot(df[1]['pitch'], label='Normalized Compression Distance')
+plt.plot(df[0]['pitch'], label='simulation')
+plt.plot(df[1]['pitch'], label='Target')
 
 plt.xlabel('Index')
 plt.ylabel('Pitch')

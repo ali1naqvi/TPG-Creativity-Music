@@ -9,31 +9,9 @@ import zlib
 from pathlib import Path
 from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInstructionStats, pathDepths
 import utils
-#changes i made for _18, 1200 gen, operations def, and 200 pop (ALSO CHANGED TO LIST FOR PITCHES) SONG IS FUR ELISE
-#changes i made for _19, 2500 gen, operations def, and 150 pop (ALSO CHANGED TO LIST FOR PITCHES) SONG IS FUR ELISE 
-#changes i made for _20, 2500 gen, operations full, and 150 pop (ALSO CHANGED TO LIST FOR PITCHES) SONG IS FUR ELISE
-#changes i made for _21, 2500 gen, operations def, and 150 pop initMaxTeamSize=5 CHANGE TO 10 initMaxProgSize=128 change to 100 SONG IS FUR ELISE
-#changes i made for _22, same as 21 but weighted rmse now
-#changes i made for _23, same as 21 but more generations
-#changes i made for _24, using new fitness function (theil)
-#changes i made for _25, using MSE function with direction composition (gen4)
-#changes i made for _26, using NCD with envelope and compare it with entire training data (gen3)
-#changes i made for _27, using NCD with envelope and compare it with the 50 values (gen3) (it wasn't good)
-#changes i made for _28, using mean absolute error
-#changes i made for _29, combine NCD and MSE (TPG 3)
-#changes i made for _30, changed population size for team from 150 to 360, probability for atomic action from 1.0 to 0.95. max steps is 800->950. training =ncd, validation and testing mse
-#changes i made for _31, swap NCD and MSE
-#changes i made for _32, change back population to 150 (from _30) and use 1.0 probability
-#changes i made for _33, change back population to 150 (from _32) and use 1.0 probability
-#changes i made for _34, ncd all, with corrections made for validation and testing agent output tpg4
-#changes i made for _35, mse all, with corrections made for validation and testing agent output tpg5
-#changes i made for _36, mse for everything but testing, with corrections made for validation and testing agent output tpg6
-#changes i made for _37, ncd for everything but testing, with corrections made for validation and testing agent output tpg7
-#changes i made for _38, ncd for training and mse for testing and validation, with corrections made for validation and testing agent output tpg8
 
-#values that can be modified for testing 
 MAX_STEPS_G = 951 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 120000
+GENERATIONS = 0
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 
@@ -235,7 +213,7 @@ def RunValidationAgents(args):
             #second half of episode
             else:
                 predicted_state = (agent.act(action_state))
-                action_state, predicted_state, reward, isDone = env.step(predicted_state, reward_func='mse') #now fix step
+                action_state, predicted_state, reward, isDone = env.step(predicted_state, reward_func='ncd') #now fix step
                 scoreEp += reward
             
             #env.set_action_mem(action_state) #add state to memory
@@ -279,7 +257,7 @@ def RunTestingAgents(args):
             #second half of episode
             else:
                 predicted_state = (agent.act(action_state))
-                action_state, predicted_state, reward, isDone = env.step(predicted_state, reward_func='mse') #now fix step
+                action_state, predicted_state, reward, isDone = env.step(predicted_state, reward_func='ncd') #now fix step
                 scoreEp += reward
             
             #env.set_action_mem(action_state) #add state to memory
@@ -339,12 +317,12 @@ def RunBestAgent(args):
 
     simulated_data = pd.concat([original_data[:MAX_STEPS_G+1], simulated_data], ignore_index=True)
     simulated_data['pitch'] = simulated_data['pitch'].round()
-    simulated_data.to_csv('Simulation_38.csv', index=False)
+    simulated_data.to_csv('Simulation_34.csv', index=False)
 
 if __name__ == '__main__':
     tStart = time.time()
-    trainer_checkpoint_path = Path("trainer_savepoint_38.pkl")
-    gen_checkpoint_path = Path("gen_savepoint_38.txt")
+    trainer_checkpoint_path = Path("trainer_savepoint_34.pkl")
+    gen_checkpoint_path = Path("gen_savepoint_34.txt")
 
     if trainer_checkpoint_path.exists():
         trainer = loadTrainer(trainer_checkpoint_path)
@@ -361,7 +339,7 @@ if __name__ == '__main__':
         gen_start = 0
 
     # Open a text file to write output
-    with open('results_38.txt', 'a' if gen_start > 0 else 'w') as file:
+    with open('results_34.txt', 'a' if gen_start > 0 else 'w') as file:
         file.write(f"Trainer done: {trainer}\n")
         processes = mp.cpu_count()
 
@@ -380,12 +358,12 @@ if __name__ == '__main__':
             teams = trainer.applyScores(scoreList)  
             
             champ = trainer.getEliteAgent(task='main')
-            champ.saveToFile("best_agent_38")
+            champ.saveToFile("best_agent_34")
 
             trainer.evolve(tasks=['main'])
             
-            validation_champion_path = Path("validation_champion_38")
-            testing_champion_path = Path("testing_champion_38")
+            validation_champion_path = Path("validation_champion_34")
+            testing_champion_path = Path("testing_champion_34")
             
             if validation_champion_path.exists():
                 with open(validation_champion_path, 'rb') as f:
@@ -426,7 +404,7 @@ if __name__ == '__main__':
                     print("Best agent of all time score: ", best_validation_score)
                     print(f"Validation champ with the best test score with {best_validation_score} on test data.")
         
-                    with open("final_validation_scores_38.txt", 'w') as f:
+                    with open("final_validation_scores_34.txt", 'w') as f:
                         f.write(str(best_validation_score))
                          
                             
@@ -476,7 +454,7 @@ if __name__ == '__main__':
                     print("Best agent of all time score: ", best_testing_score)
                     print(f"Testing champ with the best test score with {best_testing_score} on test data.")
         
-                    with open("final_testing_scores_38.txt", 'w') as f:
+                    with open("final_testing_scores_34.txt", 'w') as f:
                         f.write(str(best_testing_score))
                          
                             
@@ -492,8 +470,8 @@ if __name__ == '__main__':
             print(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}")
             file.write(f"Gen: {gen}, Best Score: {scoreStats['max']}, Avg Score: {scoreStats['average']}, Time: {str((time.time() - tStart)/3600)}\n")
 
-            trainer.saveToFile("trainer_savepoint_38.pkl")
-            with open("gen_savepoint_38.txt", 'w') as gen_file:
+            trainer.saveToFile("trainer_savepoint_34.pkl")
+            with open("gen_savepoint_34.txt", 'w') as gen_file:
                 gen_file.write(str(gen))
             
             #to keep the champ saved in a file for evaluation later on 
@@ -503,15 +481,15 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("validation_champion_38", 'rb'))
+        champ = pickle.load(open("validation_champion_34", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)
         print(champ.team.learners)
         print(champ.team.outcomes)
         print("---------------")
-        #champ.configFunctions()
-
-        # Assuming RunBestAgent is a function you have defined earlier
-        #empty array is: scorelist
-        RunBestAgent((champ, []))
+        total_instruc = 0
+        for learner_x in champ.team.learners:
+            total_instruc += len(learner_x.program.instructions)
+            
+        print(total_instruc)
