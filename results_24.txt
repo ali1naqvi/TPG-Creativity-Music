@@ -9926,3 +9926,23 @@ Trainer done: <tpg.trainer.Trainer object at 0x00000225F3FF39D0>
 Time Taken (Hours): 0.00018226961294809976
 Final Results:
 Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x0000025335D255D0>
+Time Taken (Hours): 0.000809167292382982
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000002144F91E250>
+Time Taken (Hours): 0.0007466949356926812
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000001DEDFB7E310>
+Time Taken (Hours): 0.0006615975168016222
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000002A133ECE410>
+Time Taken (Hours): 0.0010062166055043538
+Final Results:
+Min, Max, Avg
+Trainer done: <tpg.trainer.Trainer object at 0x000002D3B8A2E050>
+Time Taken (Hours): 0.0006636440753936768
+Final Results:
+Min, Max, Avg

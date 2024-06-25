@@ -9,6 +9,8 @@ import zlib
 from pathlib import Path
 from tpg.utils import getLearners, getTeams, learnerInstructionStats, actionInstructionStats, pathDepths
 import utils
+#IN THIS FILE, WE LOOK AT THE TRAINED DATA AND SEE ITS PREDICTIONS FOR EVERY 50 PRIMED VALUES GIVEN.
+
 #changes i made for _18, 1200 gen, operations def, and 200 pop (ALSO CHANGED TO LIST FOR PITCHES) SONG IS FUR ELISE
 #changes i made for _19, 2500 gen, operations def, and 150 pop (ALSO CHANGED TO LIST FOR PITCHES) SONG IS FUR ELISE 
 #changes i made for _20, 2500 gen, operations full, and 150 pop (ALSO CHANGED TO LIST FOR PITCHES) SONG IS FUR ELISE

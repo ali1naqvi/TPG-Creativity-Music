@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the three CSV files
-csv_files = ["simulation_var.csv", "input.csv"]
+csv_files = ["simulation_24_check50.csv", "input.csv"]
 df = [pd.read_csv(file) for file in csv_files]
 
 #DO NOT TOUCH 21
