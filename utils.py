@@ -85,7 +85,7 @@ def ncd(sample, target):
     # Calculate NCD value
     ncd_value = (c_concatenated - min(c_sample, c_target)) / max(c_sample, c_target)
     
-    return ncd_value + 100
+    return ncd_value
 
 def ncd_2(y1, y2):
     

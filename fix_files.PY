@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Load the two CSV files
-csv_files = ["simulation_31.csv", "input.csv"]
+csv_files = ["testkelly.csv", "input.csv"]
 df_simulation = pd.read_csv(csv_files[0])
 df_input = pd.read_csv(csv_files[1])
 

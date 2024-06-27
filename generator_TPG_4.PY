@@ -45,9 +45,11 @@ import utils
 #_50 run ncd for whole thing 5
 #_51 run theils for every thing 6
 #_52 run NCD for the whole thing 7 but use interdependencies
+#_53 theils but parameters changed
+#_54 theils 2 but parameters changed
 #values that can be modified for testing 
 MAX_STEPS_G = 960 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 125999
+GENERATIONS = 0
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 
@@ -336,7 +338,7 @@ def RunBestAgent(args):
     env = TimeSeriesEnvironment()
     # stuff print("Priming")
     # 0 to 799 (inclusive)
-    for x in range(MAX_STEPS_G - PRIME_STEPS, MAX_STEPS_G):
+    for x in range(MAX_STEPS_G - PRIME_STEPS -1, MAX_STEPS_G):
         env.current_step = x 
         print("current step: ", env.current_step)
         row = changed_data.iloc[x]
@@ -545,7 +547,7 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("validation_champion_49", 'rb'))
+        champ = pickle.load(open("testing_champion_49", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)

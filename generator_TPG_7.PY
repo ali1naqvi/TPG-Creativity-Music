@@ -46,7 +46,7 @@ import utils
 #_52 run NCD for the whole thing 7 but use interdependencies
 #values that can be modified for testing 
 MAX_STEPS_G = 960 #max values we want for training starts with 1 (so subtract one)
-GENERATIONS = 125999
+GENERATIONS = 0
 EXTRA_TIME_STEPS  = 300 #number of wanted generated values 
 STARTING_STEP = 0 #starting step
 
@@ -544,7 +544,7 @@ if __name__ == '__main__':
         for score in allScores:
             file.write(f"{score}\n")
 
-        champ = pickle.load(open("validation_champion_52", 'rb'))
+        champ = pickle.load(open("testing_champion_52", 'rb'))
         champ.configFunctionsSelf()
         print(champ.team)
         print(champ.team.fitness)
