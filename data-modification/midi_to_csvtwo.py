@@ -2,9 +2,9 @@ import pretty_midi
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
+#plot individual graphs or extract from a midi
 inputname = "simulation_31.csv"
-midi_file = "test_files/fur_elise.mid"
+midi_file = "test_files/bach.mid"
 
 def data_extraction(midi_data):
     df = pd.DataFrame()

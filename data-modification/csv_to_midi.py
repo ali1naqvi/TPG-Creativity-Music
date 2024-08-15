@@ -33,4 +33,4 @@ def create_midi_from_csv(note_data, output_file, instrument_program=0):
 if __name__ == '__main__':
     df_notes = pd.read_csv('sim31_playable.csv') #EDIT FOR CSV NAME
     note_data = df_notes.to_dict('records')
-    create_midi_from_csv(note_data, 'output_predictions_testing.mid') #EDIT FOR MIDI FILE NAME
+    create_midi_from_csv(note_data, 'file_alife2024_prime.mid') #EDIT FOR MIDI FILE NAME

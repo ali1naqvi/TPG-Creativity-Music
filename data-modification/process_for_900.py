@@ -1,7 +1,7 @@
+#this is for looking at sections and seeing what it forecasted (with Dr.Kelly implementation)
 import pandas as pd
 
 def process_csv(input_file, output_file, limit=900):
-    # Read the CSV file
     data = pd.read_csv(input_file)
 
     processed_data = []
@@ -15,14 +15,12 @@ def process_csv(input_file, output_file, limit=900):
         else:
             break
 
-    # Concatenate all chunks
+    # Concatenate chunks
     processed_data = pd.concat(processed_data)
 
-    # Save the resulting data to a new CSV file
     processed_data.to_csv(output_file, index=False)
     print(f"Processed data saved to {output_file}")
 
-# Example usage
 input_file = 'input.csv'
 output_file = 'input_U.csv'
 process_csv(input_file, output_file, limit=900)
