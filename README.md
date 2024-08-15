@@ -1,1 +1,1 @@
-Comparative study on Music data
+Comparative study of different models on Music data
