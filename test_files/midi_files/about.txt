@@ -1,0 +1,3 @@
+1. Bach.mid, there is essentially only one pitch played at a time. This would make the task possibly easier. 
+2. FuhrElise.mid, This is easy as well but has more than one pitch at a time.
+3. Fantasie.mid. This is the biggest challenge. The nosiest data. We will see how and what it captures
