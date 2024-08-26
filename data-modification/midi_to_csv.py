@@ -2,8 +2,8 @@ import pretty_midi
 import pandas as pd 
 
 #pretty stable
-inputname = "first_notequal.csv"
-midi_file = "test_files/bach.mid"
+inputname = "test_files/csv_files/fur_elise.csv"
+midi_file = "test_files/midi_files/fur_elise.mid"
 
 def get_rest_after_n_seconds(midi_file, seconds):
     # Load the MIDI file
