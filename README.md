@@ -6,7 +6,7 @@ This research explores various models that work with music data. The music is re
    - Each time step consists of:
      - **Pitch**
      - **Duration** (the length of time the pitch is held)
-     - **Offset**
+     - **Offset** (location of note in time)
 
 2. **One-Hot Encoding Representation:**
    - Pitches are represented using one-hot encoding.
