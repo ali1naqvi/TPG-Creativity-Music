@@ -1,1 +1,27 @@
-Research on different models working with music. The music has two possible representations: time steps with each consisting of the pitch, duration of the held pitch, and offset. The second representation is a one hot encoding of the possible pitches where the difference in time between the time steps is a constant value (the smallest difference in the song). The models used vary from statistical to standard machine learning methods. The model we focus on however, are Tangled Program Graphs. The library we used is forked and changed to give back one action. We are also very preliminary in experimenting with curriculum learning, the training validation and testing schemes are based on the smoothness of the data. The methodology of the data division for TPG can be read here: https://ali-naqvi.ca/uploads/Towards_Creativity.pdf
+### Research on Music Models
+
+This research explores various models that work with music data. The music is represented in two possible formats:
+
+1. **Time Steps Representation:**
+   - Each time step consists of:
+     - **Pitch**
+     - **Duration** (the length of time the pitch is held)
+     - **Offset**
+
+2. **One-Hot Encoding Representation:**
+   - Pitches are represented using one-hot encoding.
+   - The difference in time between the steps is a constant value (the smallest time difference in the song).
+
+### Models Used
+
+The research involves a variety of models, ranging from statistical methods to standard machine learning approaches. However, the primary focus is on **Tangled Program Graphs (TPG)**.
+
+### TPG Customization
+
+- The TPG library was forked and modified to return a single action.
+- Preliminary experiments are being conducted with curriculum learning.
+- The training, validation, and testing schemes are based on the smoothness of the data.
+
+### Data Division Methodology
+
+The methodology for data division specifically tailored for TPG can be found [here](https://ali-naqvi.ca/uploads/Towards_Creativity.pdf).
