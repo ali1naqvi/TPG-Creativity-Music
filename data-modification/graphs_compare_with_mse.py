@@ -15,7 +15,6 @@ def mse(sample, target):
 csv_files = ["input_uni.csv", "checkpoints/Simulation_5.csv"]
 df = [pd.read_csv(file) for file in csv_files]
 
-# Trim the dataframes to the specified range
 df = [df[i].iloc[] for i in range(2)]
 
 # Calculate MSE for each simulation compared to the input
@@ -27,7 +26,6 @@ mse_values.append(mse1)
 for i, mse1 in enumerate(mse_values):
     print(f"MSE between input and simulation_{csv_files[i].split('_')[1].split('.')[0]}: {mse1}")
 
-# Plot the 'pitch' column from each dataframe
 plt.figure(figsize=(10, 6))
 
 plt.plot(df[0]['pitch'], label='Binary representation (new)')

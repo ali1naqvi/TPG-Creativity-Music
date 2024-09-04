@@ -16,18 +16,16 @@ def data_extraction(midi_data):
         features = []
         for note in all_notes:
             offset = note.start
-            pitch = [note.pitch]  # Enclose pitch in a list
+            pitch = [note.pitch] 
             duration_ticks = midi_data.time_to_tick(note.end) - midi_data.time_to_tick(note.start)
             duration_ppq = duration_ticks / midi_data.resolution
             features.append({
                 'offset': offset,
                 'duration_ppq': duration_ppq,
-                'pitch': pitch,  # Store pitch as a list
+                'pitch': pitch, 
             })
 
-        # Convert the features list for the current instrument to a DataFrame
         instrument_df = pd.DataFrame(features)
-        # Append the current instrument's DataFrame to the full DataFrame
         df = pd.concat([df, instrument_df], ignore_index=True)
 
     df.to_csv(inputname, index=False)
@@ -39,15 +37,12 @@ def plot_pitches(input_csv):
     plt.figure(figsize=(12, 6))
     ax = plt.gca()
     
-    # Now that 'pitch' contains numeric data, we can plot it
     df.reset_index().plot(kind='line', y='duration_ppq', ax=ax, legend=False, linewidth=0.8)
 
-    # Set title and labels with increased font size
     plt.title("Pitch Duration Representation of 'Fur Elise'", fontsize=16)
     plt.xlabel('Time (seconds)', fontsize=14)
     plt.ylabel('Pitch Duration (seconds)', fontsize=14)
     
-    # Set larger tick labels
     ax.tick_params(axis='both', which='major', labelsize=12)
 
     plt.show()

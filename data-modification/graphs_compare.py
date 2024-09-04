@@ -10,7 +10,6 @@ df = [pd.read_csv(file) for file in csv_files]
 #24 = THEIL
 #31 = NCD 
 
-# Plot the 'pitch' column from each dataframe
 plt.figure(figsize=(10, 6))
 df[0] = df[0].iloc[1000:1140]
 df[1] = df[1].iloc[1000:1140]
