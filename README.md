@@ -20,7 +20,7 @@ The research involves a variety of models, ranging from statistical methods to s
 
 - The TPG library was forked and modified to return a single action.
 - Preliminary experiments are being conducted with curriculum learning.
-- The training, validation, and testing schemes are based on the smoothness of the data.
+   - The training, validation, and testing schemes are based on the smoothness of the data.
 
 ### Data Division Methodology
 
